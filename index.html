@@ -100,7 +100,7 @@
 	</div>
 	<div class="row top">
 		<div class="col-md-4 col-xs-4 edge">
-			<div class="heading map{{map.value}}">
+			<div class="heading map{{map.value}} {{^players.all}}players{{players.value}}{{/players.all}}">
 				<h2>Map {{map.value}}</h2>
                                     <p>
                                       {{#mapnum.1}}different{{^9.I}}, non-central{{/9.I}} capitals{{/mapnum.1}}
@@ -2124,13 +2124,14 @@
 		params[world.join('')] = true;
 
 		//Players map.
+		params['players']['value'] = players;									 
 		$.map([2,3,4], function(p) {
-			if (p == players || players == 1)
+			if (p == params.players.value || params.players.value == 1)
 				params['players'][p] = true;
 		});
-		if (players == 1)
+		if (params.players.value == 1)
 			params['players']['all'] = true;
-		if (players == 1 || players == 2 || players == 4)
+		if (params.players.value != 3)
 			params['players']['2or4'] = true;
 		
 		// Run pre-render hooks and assemble the list of parts
