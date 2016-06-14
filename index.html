@@ -108,10 +108,21 @@
 		</div>
 		<div class="col-md-6 col-xs-6">
 			<div class="heading">
+				<div style="float:right;text-align:right;cursor:pointer;" id="playerCount">
+					<h2>Players</h2>
+					<p>
+					  {{#players.all}}2 &ndash; 4 {{/players.all}}
+					  {{^players.all}}
+						  {{#players.2}}2{{/players.2}}
+					  	{{#players.3}}3{{/players.3}}
+							{{#players.4}}4{{/players.4}}
+					  {{/players.all}}
+					</p>
+				</div>
 				{{#order.clockwise}}
 					<h2>Clockwise player order</h2>
 					{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}<p>Common capital in center of map</p>{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}
-					{{^mapnum.4}}{{^mapnum.5}}<p>Capitals chosen counter clockwise from last player to first</p>{{/mapnum.5}}{{/mapnum.4}}
+					{{^mapnum.4}}{{^mapnum.5}}<p>Capitals chosen counter-clockwise from last player to first</p>{{/mapnum.5}}{{/mapnum.4}}
 				{{/order.clockwise}}
 				{{#order.income}}
 					<h2>Round-based {{owner}} order</h2>
@@ -131,8 +142,9 @@
 			<div class="heading">
 				<h2>Starting Money</h2>
 				{{#money.fixed}}<p>Each player gets ${{money.amount}}</p>{{/money.fixed}}
-				{{#money.increasing}}<p>In turn order $60, $70, $80, $90 (2♟: $60, $80)</p>{{/money.increasing}}
-				{{#money.shares}}<p>Each ♟: ($600 / # of players)</p>{{/money.shares}}
+				{{#money.increasing}}<p>In turn order $60{{^players.2}}, $70{{/players.2}}, $80{{^players.3}}{{^players.2}}, $90{{/players.2}}{{/players.3}}{{#players.all}} (2♟: $60, $80){{/players.all}}</p>{{/money.increasing}}
+				{{#money.shares}}<p>Each {{#players.all}}♟: ($600 / # of players){{/players.all}}
+					{{^players.all}}player gets ${{/players.all}}{{#players.2}}300{{/players.2}}{{#players.3}}200{{/players.3}}{{#players.4}}150{{/players.4}}</p>{{/money.shares}}
 				{{#3.III}}<p>Each player gets an additional $20</p>{{/3.III}}
 			</div>
 		</div>
@@ -196,7 +208,7 @@
 				{{/9.III}}
 			</p>{{/9}}
 			{{#3}}
-				<p>The privileges used in this game are: <strong>{{priv.list}}</strong>.<br />{{#company}}Take 2 cards of each privilege for the deck.{{/company}}{{^company}}4♟: Take 2 cards of each privilege for the deck. 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half for the deck. 2♟: Take 1 card of each privilege for the deck.{{/company}}</p>
+				<p>The privileges used in this game are: <strong>{{priv.list}}</strong>.<br />{{#company}}Take 2 cards of each privilege for the deck.{{/company}}{{^company}}{{#players.4}}4♟: Take 2 cards of each privilege for the deck.{{/players.4}}{{#players.3}} 3♟: First take 1 card of each privilege, shuffle them and remove half of them from the game. Then, add 1 card of each privilege to the remaining half for the deck.{{/players.3}}{{#players.2}} 2♟: Take 1 card of each privilege for the deck.{{/players.2}}{{/company}}</p>
  				<p>Shuffle the privileges separated by card backs I, II, III and place them in a single stack, so that the cards with the back I are on top, the cards with the back III are at the bottom.</p>
 				<p>Place the price token next to the map. Draw 1 privilege per {{owner}} and place them in a face-up row to the right of the price token, so that the minimal bid for each privilege is $20.</p>
 			{{/3}}
@@ -273,10 +285,10 @@
 			{{#4}}
 				{{#9}}
 					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
-					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
+					{{#9.III}}<p>{{#players.all}}Depending on the # of players, choose{{/players.all}}{{^players.all}}Choose{{/players.all}} the following capitals: {{#players.2}}2♟: Capitals are across from each other. {{/players.2}}{{#players.3}}3♟: Capitals are equidistant from each other. {{/players.3}}{{#players.4}}4♟: Both unselected capitals are across from each other.{{/players.4}}</p>{{/9.III}}
 				{{/9}}
-				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
-				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
+				{{^9}}<p>{{#players.all}}Depending on the # of players, choose{{/players.all}}{{^players.all}}Choose{{/players.all}} the following capitals: {{#players.2}}2♟: Capitals are across from each other. {{/players.2}}{{#players.3}}3♟: Capitals are equidistant from each other. {{/players.3}}{{#players.4}}4♟: Both unselected capitals are across from each other.{{/players.4}}</p>{{/9}}
+				{{#1}}{{^1.III}}{{^company}}{{#players.2or4}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/players.2or4}}{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
 					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities which are not chosen as capitals.</p>{{/8.III}}
@@ -1479,6 +1491,7 @@
 	
 	var world;
 	var modules;
+	var players = sessionStorage.getItem('players') ? parseInt(sessionStorage.getItem('players'),10) : 1;
 
 	var parts = {
 		'2': {'name': 'goods', 'max': 48},
@@ -1996,6 +2009,7 @@
 			'owns':shares_defs[getNameTokens(world)]['owns'],
 			'company':shares_defs[getNameTokens(world)]['company'],
 			'priv': catchPrivileges(world),
+			'players': {},
 		};
 	
 		params[world[0]] = {'I': true};
@@ -2004,6 +2018,16 @@
 		params['mapnum'][params.map.value] = true;
 		params[world.join('')] = true;
 
+		//Players map.
+		$.map([2,3,4], function(p) {
+			if (p == players || players == 1)
+				params['players'][p] = true;
+		});
+		if (players == 1)
+			params['players']['all'] = true;
+		if (players == 1 || players == 2 || players == 4)
+			params['players']['2or4'] = true;
+		
 		// Run pre-render hooks and assemble the list of parts
 		var game_parts = {};
 		$.map(['I', 'II', 'III'], function(i) {
@@ -2037,6 +2061,13 @@
 
 		return rendered;
 		
+	}
+	
+	function togglePlayers() {
+		//A count of 1 represents all player data.
+		players = players % 4 + 1;
+		sessionStorage.setItem('players', players);
+		load();
 	}
 	
 	function toggleMenu() {
@@ -2091,6 +2122,7 @@
 		$('#menuToggle').on('click', function (e) { toggleMenu(); });
 		$('#printicon').on('click', function (e) { window.print(); });
 		$('div.randomizer').on('click', function (e) { randomizeWorlds(); });
+		$('#playerCount').on('click', function (e) { togglePlayers(); });
 
 	}
 	
