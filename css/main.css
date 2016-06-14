@@ -132,6 +132,9 @@ table th {
 .water-adjacent { background-image: url('../img/water-adjacent-icon.png'); }
 
 .heading.map1 { background-image: url('../img/map1.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map1.players2 { background-image: url('../img/map1-2p.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map1.players3 { background-image: url('../img/map1-3p.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map1.players4 { background-image: url('../img/map1-4p.png'); background-position:80% 60%; background-repeat:no-repeat; }
 .heading.map2 { background-image: url('../img/map2.png'); background-position:80% 60%; background-repeat:no-repeat; }
 .heading.map3 { background-image: url('../img/map3.png'); background-position:80% 60%; background-repeat:no-repeat; }
 .heading.map4 { background-image: url('../img/map4.png'); background-position:80% 60%; background-repeat:no-repeat; }
