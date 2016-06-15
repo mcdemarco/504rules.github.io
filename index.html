@@ -100,7 +100,7 @@
 	</div>
 	<div class="row top">
 		<div class="col-md-4 col-xs-4 edge">
-			<div class="heading map{{map.value}} {{^players.all}}players{{players.value}}{{/players.all}}">
+			<div class="heading map{{map.value}} {{#mapnum.1}}{{#9}}{{^9.III}}players4{{/9.III}}{{/9}} {{#9.III}}{{^players.all}}players{{players.value}}{{/players.all}}{{/9.III}} {{^9}}{{^players.all}}players{{players.value}}{{/players.all}}{{/9}}{{/mapnum.1}}">
 				<h2>Map {{map.value}}</h2>
                                     <p>
                                       {{#mapnum.1}}different{{^9.I}}, non-central{{/9.I}} capitals{{/mapnum.1}}
@@ -117,11 +117,7 @@
 					<h2>Players</h2>
 					<p>
 					  {{#players.all}}2 &ndash; 4 {{/players.all}}
-					  {{^players.all}}
-						  {{#players.2}}2{{/players.2}}
-					  	{{#players.3}}3{{/players.3}}
-							{{#players.4}}4{{/players.4}}
-					  {{/players.all}}
+					  {{^players.all}}{{players.value}}{{/players.all}}
 					</p>
 				</div>
 				{{#order.clockwise}}
@@ -151,7 +147,7 @@
 				{{#money.fixed}}<p>Each player gets ${{money.amount}}</p>{{/money.fixed}}
 				{{#money.increasing}}<p>In turn order $60{{^players.2}}, $70{{/players.2}}, $80{{^players.3}}{{^players.2}}, $90{{/players.2}}{{/players.3}}{{#players.all}} (2♟: $60, $80){{/players.all}}</p>{{/money.increasing}}
 				{{#money.shares}}<p>Each {{#players.all}}♟: ($600 / # of players){{/players.all}}
-					{{^players.all}}player gets ${{/players.all}}{{#players.2}}300{{/players.2}}{{#players.3}}200{{/players.3}}{{#players.4}}150{{/players.4}}</p>{{/money.shares}}
+					{{^players.all}}player gets ${{#players.2}}300{{/players.2}}{{#players.3}}200{{/players.3}}{{#players.4}}150{{/players.4}}{{/players.all}}</p>{{/money.shares}}
 				{{#3.III}}<p>Each player gets an additional $20</p>{{/3.III}}
 			</div>
 		</div>
@@ -2115,6 +2111,7 @@
 			'priv': catchPrivileges(world),
 			'full': full,
 			'players': {},
+			'submap': {},
 		};
 	
 		params[world[0]] = {'I': true};
