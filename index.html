@@ -547,9 +547,9 @@
 				<table>
 					<tr><th></th><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
 					<tr><th>1st place</th><td>10 VP</td><td>10 VP</td><td>9 VP</td><td>8 VP</td><td>7 VP</td><td>6 VP</td></tr>
-					<tr><th>2nd place (not for 2 players)</th><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
+					{{#players.3or4}}<tr><th>2nd place (not for 2 players)</th><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>{{/players.3or4}}
 				</table>
-				<p>In case of a tie for 1st place all concerned players each get 2 VP less (this applies for 2 players, too) and 0 VP for 2nd place. In case of a tie for 2nd place all concerned players get the stated VP.</p>
+				<p>In case of a tie for 1st place all concerned players each get 2 VP less {{#players.2}}(this applies for 2 players, too){{/players.2}} and 0 VP for 2nd place. In case of a tie for 2nd place all concerned players get the stated VP.</p>
 				<p><b>Example Scoring:</b> In a game with 3 players Camille has majorities for cities, forests and a 2nd place for mountains. She gets 22 VP. Afterwards, she must remove 5 residents from the game map (1 resident for each 4 VP).</p>
 			</div>
 		{{/7.I}}
