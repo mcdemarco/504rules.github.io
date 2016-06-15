@@ -696,9 +696,9 @@
 				<p><b>Bonus VP at the Final Scoring:</b> The player&rsquo;s stock companies with the most victory points (VP) get additional VP.</p>
 				<table>
 					<tr><th></th><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th></tr>
-					<tr><th>2 ♟</th><td>3 VP</td><td>0 VP</td><td></td><td></td></tr>
-					<tr><th>3 ♟</th><td>3 VP</td><td>1 VP</td><td>0 VP</td><td></td></tr>
-					<tr><th>4 ♟</th><td>4 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
+					{{#players.2}}<tr><th>2 ♟</th><td>3 VP</td><td>0 VP</td><td></td><td></td></tr>{{/players.2}}
+					{{#players.3}}<tr><th>3 ♟</th><td>3 VP</td><td>1 VP</td><td>0 VP</td><td></td></tr>{{/players.3}}
+					{{#players.4}}<tr><th>4 ♟</th><td>4 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>{{/players.4}}
 				</table>
 			</div>
 			<div class="note col-md-3 col-xs-4">
@@ -795,7 +795,7 @@
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 2: Privileges</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: 4 (2♟), 5 (3♟), 6 (4♟) or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
+				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: {{#players.2}}4 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}5 (3♟){{/players.3}}{{#players.all}}, {{/players.all}}{{#players.4}}6 (4♟){{/players.4}} or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
 				<p>All privileges are now auctioned from left to right, one at a time. {{^company}}Beginning with the 1st player, all players bid (or pass) in clockwise seating order around the table, until there is a highest bid.{{/company}}{{#company}}Beginning with the president of the 1st company, all players bid (or pass) for each of their companies in company turn order, until there is a highest bid.{{/company}} If a {{owner}} passes he may only bid again for the next privilege. The highest bidder pays the amount{{#company}} from the winning company{{/company}} to the bank and places the privilege face up in {{^company}}front of him{{/company}}{{#company}}the company&rsquo;s holdings{{/company}}. If the starting bid of the privilege was $20, and all {{owners}} pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{owners}} pass again, remove that privilege from the game!</p>
 				<p>The {{owner}} may only buy each type of privilege once, {{sagent}} may use {{fowns}} privileges immediately after purchase.</p>
 			</div>
@@ -828,7 +828,7 @@
 
 	{{#capture}}
 		{{#3.III}}
-			<p>If there are fewer privileges in the row of cards as the # of {{owners}} at the start of this phase, the active {{agent}} draws 1 privilege and places it to the right of the row of cards {{^company}}(2♟: If less than 3 privileges are in the row of cards, the player draws 1 privilege).{{/company}} The price of a newly drawn privilege is always $20.</p>
+			<p>If there are fewer privileges in the row of cards as the # of {{owners}} at the start of this phase, the active {{agent}} draws 1 privilege and places it to the right of the row of cards. {{^company}}{{#players.2}}(2♟: If less than 3 privileges are in the row of cards, the player draws 1 privilege.){{/players.2}}{{/company}} The price of a newly drawn privilege is always $20.</p>
 			<p>Now the {{agent}} may buy 1 privilege{{#company}} paying the money from the companies holdings{{/company}}. If he does not buy one privilege, the price drops for all privileges for $0 and the price token is placed on the right of the row of cards. Newly drawn privileges are again placed on the right of the price token, so their price is $20. If at any time there are privileges with different backs (I, II or III) in that row, the price for all privileges with the lower back drops to $0 and the price token is placed to the right of them.</p>
 			<p>{{^company}}The player may only buy each type of privilege once{{/company}}{{#company}}The president can&rsquo;t buy a privilege for their company if the company already owns it{{/company}}. He may use his privileges immediately after purchase.</p>
 		{{/3.III}}
@@ -1215,7 +1215,7 @@
 			<p>Starting with the 3rd round, the {{agent}} now removes {{fowns}} resident from the face down scoring card and turns this card face up. If the card shows a <span class="glyphicon glyphicon-ok"></span>, the next {{agent}} continues with his turn. If it is one of the three scorings, the game is paused for an immediate scoring!</p>
 			<p><b>1st and 2nd Scoring:</b> The {{owners}} get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
 			<p><b>3rd Scoring (Final Scoring):</b> The {{owners}} get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All {{owners}} missing their last turn get once-only additional 3 VP.</p>
-			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. If he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards, the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
+			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}{{#players.2}}3 VP (2♟){{/players.2}}{{#players.all}} or {{/players.all}}{{#players.3or4}}4 VP (3♟, 4♟){{/players.3or4}}{{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. If he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards, the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
 		{{/7.I}}
 	{{/capture}}
 	{{#hascapture}}
@@ -1229,7 +1229,7 @@
 		<div class="col-md-2 col-xs-2 mod{{world.0}}"><h1>Game End</h1></div>
 		<div class="col-md-10 col-xs-10">
 			{{#1.I}}
-				{{^9.II}}<p>The game ends at the end of the round after all players commonly delivered at least 19 (2♟), 21 (3♟) or 23 (4♟) goods tiles.</p>{{/9.II}}
+				{{^9.II}}<p>The game ends at the end of the round after all players commonly delivered at least {{#players.2}}19 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}21 (3♟){{/players.3}}{{#players.all}} or {{/players.all}}{{#players.4}}23 (4♟){{/players.4}} goods tiles.</p>{{/9.II}}
 				{{#9.II}}<p>The game ends at the end of the round after all companies commonly delivered at least 25 goods tiles.</p>{{/9.II}}
 			{{/1.I}}
 			{{#2.I}}
@@ -1239,11 +1239,11 @@
 				{{#residents}}
 					{{#4}}
 						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 4 population on city cards.</p>{{/9.II}}
-						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round after at least 1 player placed population on 7 (2♟), 6 (3♟) or 5 (4♟) city cards.</p>{{/9.II}}
+						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round after at least 1 player placed population on {{#players.2}}7 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}6 (3♟){{/players.3}}{{#players.all}} or {{/players.all}}{{#players.4}}5 (4♟){{/players.4}} city cards.</p>{{/9.II}}
 					{{/4}}
 					{{^4}}
 						{{#9.II}}<p>The game ends at the end of the round in which at least 1 stock company had 6 population on city cards.</p>{{/9.II}}
-						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round after at least 1 player placed population on 9 (2♟), 8 (3♟) or 7 (4♟) city cards.</p>{{/9.II}}
+						{{^9.II}}<p>Depending on the # of players the game ends at the end of the round after at least 1 player placed population on {{#players.2}}9 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}8 (3♟){{/players.3}}{{#players.all}} or {{/players.all}}{{#players.4}}7 (4♟){{/players.4}} city cards.</p>{{/9.II}}
 					{{/4}}
 				{{/residents}}
 			{{/2.I}}
@@ -1265,7 +1265,7 @@
 			{{#6.I}}
 				{{#4}}<p>The game ends at the end of the round after the players commonly build exactly 40 roads.</p>{{/4}}
 				{{^4}}{{#9.II}}<p>The game ends at the end of the round after at least 1 stock company connects 4 cities to its roads.</p>{{/9.II}}{{/4}}
-				{{^4}}{{^9.II}}<p>Depending on the # of players, the game ends at the end of the round after at least 1 player connects 7 (2♟), 6 (3♟) or 5 (4♟) cities to his roads.</p>{{/9.II}}{{/4}}
+				{{^4}}{{^9.II}}<p>Depending on the # of players, the game ends at the end of the round after at least 1 player connects {{#players.2}}7 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}6 (3♟){{/players.3}}{{#players.all}} or {{/players.all}}{{#players.4}}5 (4♟){{/players.4}} cities to his roads.</p>{{/9.II}}{{/4}}
 			{{/6.I}}
 			{{#7.I}}
 				<p>The game ends immediately after the 3rd scoring is turned face up. The <b>Final Scoring</b> takes place, see above.</p>
@@ -1279,7 +1279,7 @@
 						<p>The game ends at the end of the round after at least 1 stock company owns at least 4 trading houses and at least 5 goods.</p>
 					{{/9}}
 					{{^9}}
-						<p>Depending on the # of players the game ends at the end of the round after at least 1 player owns 8 (2♟), 7 (3♟) or 6 (4♟) trading houses and at least 5 goods.</p>
+						<p>Depending on the # of players the game ends at the end of the round after at least 1 player owns {{#players.2}}8 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}7 (3♟){{/players.3}}{{#players.all}} or {{/players.all}}{{#players.4}}6 (4♟){{/players.4}} trading houses and at least 5 goods.</p>
 					{{/9}}
 				{{/4}}
 				{{#4}}
@@ -1287,7 +1287,7 @@
 						<p>The game ends at the end of the round after at least 1 stock company owns at least 3 trading houses and at least 5 goods.</p>
 					{{/9}}
 					{{^9}}
-						<p>Depending on the # of players the game ends at the end of the round after at least 1 player owns 6 (2♟), 5 (3♟) or 4 (4♟) trading houses and at least 5 goods.</p>
+						<p>Depending on the # of players the game ends at the end of the round after at least 1 player owns {{#players.2}}6 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}5 (3♟){{/players.3}}{{#players.all}} or {{/players.all}}{{#players.4}}4 (4♟){{/players.4}} trading houses and at least 5 goods.</p>
 					{{/9}}
 				{{/4}}
 			{{/8.I}}
@@ -2025,6 +2025,8 @@
 			params['players']['all'] = true;
 		if (params.players.value != 3)
 			params['players']['2or4'] = true;
+		if (params.players.value != 2)
+			params['players']['3or4'] = true;
 		
 		// Run pre-render hooks and assemble the list of parts
 		var game_parts = {};
