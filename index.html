@@ -592,11 +592,11 @@
 					<p>The player must pay money for his trading house, depending on the # of players/{{#4}}militia/{{/4}}stock companies already having their trading houses in that city.</p>
 					<table>
 						<tr><th>First</th><th>Second</th><th>Third</th><th>Fourth</th>
-                                                {{^9.I}}{{^9.II}}{{#4}}<th>Fifth</th>{{/4}}{{/9.II}}
-                                                {{/9.I}}{{#9}}{{^9.III}}<th>Fifth</th>{{#4}}<th>Sixth</th>{{/4}}{{/9.III}}{{/9}}</tr>
+ 							{{^company}}{{#4}}<th>Fifth</th>{{/4}}{{^company}}
+							{{#company}}<th>Fifth</th>{{#4}}<th>Sixth</th>{{/4}}{{/company}}</tr>
 						<tr><td>$0</td><td>$10</td><td>$20</td><td>$30</td>
-                                                {{^9.I}}{{^9.II}}{{#4}}<td>$40</td>{{/4}}{{/9.II}}
-                                                {{/9.I}}{{#9}}{{^9.III}}<td>$40</td>{{#4}}<td>$50</td>{{/4}}{{/9.III}}{{/9}}</tr>
+							{{^company}}{{#4}}<td>$40</td>{{/4}}{{/company}}
+                                                        {{#company}}<td>$40</td>{{#4}}<td>$50</td>{{/4}}{{/company}}</tr>
 					</table>
 				</div>
 			{{/8.III}}
