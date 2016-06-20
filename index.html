@@ -99,19 +99,24 @@
 		</div>
 	</div>
 	<div class="row top">
-		<div class="col-md-3 col-xs-3">
+		<div class="col-md-4 col-xs-4 edge">
 			<div class="heading map{{map.value}}">
 				<h2>Map {{map.value}}</h2>
-					<p>{{#residents}}<img src="img/meeple.png" class="meeple">{{/residents}}
-					{{^residents}}<img src="img/meeple_not.png" class="meeple">{{/residents}}</p>
+                                    <p>
+                                      {{#mapnum.1}}different{{^9.I}}, non-central{{/9.I}} capitals{{/mapnum.1}}
+                                      {{#mapnum.2}}different edge capitals{{/mapnum.2}}
+                                      {{#mapnum.3}}different capitals {{^7.II}}with distinct goods{{/7.II}}{{/mapnum.3}}
+                                      {{#mapnum.4}}common capital "1"{{/mapnum.4}}
+                                      {{#mapnum.5}}common central capital "1"{{/mapnum.5}}
+                                    </p>
 			</div>
 		</div>
-		<div class="col-md-6 col-xs-6">
+		<div class="col-md-4 col-xs-4">
 			<div class="heading">
 				{{#order.clockwise}}
 					<h2>Clockwise player order</h2>
 					{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}<p>Common capital in center of map</p>{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}
-					{{^mapnum.4}}{{^mapnum.5}}<p>Capitals chosen counter clockwise from last player to first</p>{{/mapnum.5}}{{/mapnum.4}}
+					{{^mapnum.4}}{{^mapnum.5}}<p>Capitals chosen counter-clockwise, last to first</p>{{/mapnum.5}}{{/mapnum.4}}
 				{{/order.clockwise}}
 				{{#order.income}}
 					<h2>Round-based {{owner}} order</h2>
@@ -127,13 +132,15 @@
 				{{/order.shares}}
 			</div>
 		</div>
-		<div class="col-md-3 col-xs-3">
+		<div class="col-md-4 col-xs-4 edge">
 			<div class="heading">
-				<h2>Starting Money</h2>
-				{{#money.fixed}}<p>Each player gets ${{money.amount}}</p>{{/money.fixed}}
-				{{#money.increasing}}<p>In turn order $60, $70, $80, $90 (2♟: $60, $80)</p>{{/money.increasing}}
-				{{#money.shares}}<p>Each ♟: ($600 / # of players)</p>{{/money.shares}}
-				{{#3.III}}<p>Each player gets an additional $20</p>{{/3.III}}
+                         <div style="float:right;">{{#residents}}<img src="img/meeple.png" class="meeple">{{/residents}}
+		           {{^residents}}<img src="img/meeple_not.png" class="meeple">{{/residents}}</div>
+			     <h2>Starting Money</h2>
+				<p>{{#money.fixed}}Each player gets ${{money.amount}}{{/money.fixed}}
+				{{#money.increasing}}In turn order $60, $70, $80, $90 (2♟: $60, $80){{/money.increasing}}
+				{{#money.shares}}Each ♟: ($600 / # of players){{/money.shares}}
+				{{#3.III}}.  Each player gets an additional $20.{{/3.III}}</p>
 			</div>
 		</div>
 	</div>
@@ -273,10 +280,10 @@
 			{{#4}}
 				{{#9}}
 					{{^9.III}}<p>The stock companies may choose any capitals at the edge of the map.</p>{{/9.III}}
-					{{#9.III}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9.III}}
+					{{#9.III}}{{^mapnum.1}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/mapnum.1}}{{/9.III}}
 				{{/9}}
-				{{^9}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/9}}
-				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ Players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
+				{{^9}}{{^mapnum.1}}<p>Depending on the # of players, choose the following capitals: 2♟: Capitals are across from each other. 3♟: Capitals are equidistant from each other. 4♟: Both unselected capitals are across from each other.</p>{{/mapnum.1}}{{/9}}
+				{{#1}}{{^1.III}}{{^company}}<p>When playing with 2♟/4♟ players cannot choose cities 5 or 10 for their capital. (This allows all players to comply with both rules for capital placement.)</p>{{/company}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}<p>Place 1 barrack on all free cities. These barracks are considered trading houses.</p>{{/8.III}}
 					{{#8.III}}<p>Place 1 barrack and 1 militia on all free cities which are not chosen as capitals.</p>{{/8.III}}
