@@ -88,6 +88,7 @@
 		<div class="col-md-12 col-xs-12">
 			<div class="quickMenu">
 				<div class="randomizer"><span class="glyphicon glyphicon-random btn-sm" style="cursor: pointer;"></span></div>
+				<div id="toggleFull" title="{{#full}}Hide{{/full}}{{^full}}Show{{/full}} full rules"><span class="glyphicon glyphicon-{{#full}}duplicate{{/full}}{{^full}}file{{/full}} btn-sm" style="cursor: pointer;"></span></div>
 				<div id="printicon"><span class="glyphicon glyphicon-print btn-sm" style="cursor: pointer;"></span></div>
 				<div id="menuToggle"><span class="glyphicon glyphicon-menu-hamburger btn-sm" style="cursor: pointer;"></span></div>
 			</div>
@@ -147,7 +148,7 @@
 </script>
 <script id="template_setup" type="x-tmpl-mustache">
 	<div class="row section">
-		<div class="col-md-2 col-xs-2"><h1>Special game parts</h1></div>
+		<div class="col-md-2 col-xs-2"><h1>{{^full}}Special g{{/full}}{{#full}}G{{/full}}ame parts</h1></div>
 		<div class="col-md-10 col-xs-10">
 			<ul class="parts">
 				{{#parts}}
@@ -1490,7 +1491,8 @@
 	
 	var world;
 	var modules;
-
+	var full = sessionStorage.getItem('full') ? (sessionStorage.getItem('full') == 'true') : false;
+ 
 	var parts = {
 		'2': {'name': 'goods', 'max': 48},
 		'3': {'name': 'covering tokens', 'max': 30},
@@ -2007,6 +2009,7 @@
 			'owns':shares_defs[getNameTokens(world)]['owns'],
 			'company':shares_defs[getNameTokens(world)]['company'],
 			'priv': catchPrivileges(world),
+			'full': full,
 		};
 	
 		params[world[0]] = {'I': true};
@@ -2049,7 +2052,14 @@
 		return rendered;
 		
 	}
-	
+		
+	function toggleFull() {
+		//Set full and show the extended/full rules when full is true.
+		full = !full;
+		sessionStorage.setItem('full', full);
+		load();
+	}
+		
 	function toggleMenu() {
 		if($("#menu").is(':hidden')) {
 			$("#menu").slideDown(100, function () {
@@ -2102,6 +2112,7 @@
 		$('#menuToggle').on('click', function (e) { toggleMenu(); });
 		$('#printicon').on('click', function (e) { window.print(); });
 		$('div.randomizer').on('click', function (e) { randomizeWorlds(); });
+		$('#toggleFull').on('click', function (e) { toggleFull(); });
 
 	}
 	
