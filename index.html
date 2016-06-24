@@ -150,10 +150,35 @@
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>{{^full}}Special g{{/full}}{{#full}}G{{/full}}ame parts</h1></div>
 		<div class="col-md-10 col-xs-10">
+		{{#full}}
+			<div style="float:right;padding-left:1em;">
+				<table>
+					<tr>
+						<th></th>{{^company}}<th>2♟</th><th>3♟</th><th>4♟</th>{{/company}}{{#company}}<th>5 stock companies</th>{{/company}}
+					</tr>
+					{{#residents}}
+						<tr>
+							<th>residents</th>{{^company}}<td>30</td><td>25</td><td>20</td>{{/company}}{{#company}}<td>15</th>{{/company}}
+						</tr>
+						<tr>
+							<th>settlements</th>{{^company}}<td>30</td><td>25</td><td>20</td>{{/company}}{{#company}}<td>15</th>{{/company}}
+						</tr>
+					{{/residents}}
+					{{^residents}}
+						<tr>
+							<th>settlements</th>{{^company}}<td>20</td><td>20</td><td>20</td>{{/company}}{{#company}}<td>15</th>{{/company}}						
+						</tr>
+					{{/residents}}
+				</table>
+			</div>
+		{{/full}}
 			<ul class="parts">
 				{{#parts}}
 					<li><span>{{id}}</span>{{count}} {{name}}</li>
 				{{/parts}}
+				{{#full}}
+					<li>and each {{agent}} gets a certain number of {{#residents}}<span>14</span>residents {{^9.I}}and{{/9.I}}{{/residents}} <span>13</span>settlements (see table).</li>
+				{{/full}}
 			</ul>
 		</div>
 	</div>
