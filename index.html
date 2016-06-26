@@ -390,23 +390,6 @@
 	{{/3}}
 </script>
 <script id="template_examples" type="x-tmpl-mustache">
-	{{#capture}}
-		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities which are explored during the game.</p>{{/5}}{{/4}}
-		{{#full}}{{#company}}
-			<p>
-				<b>Share Round (SR):</b> During the SR, the players deal in shares of the 5 stock companies. This round is played in a clockwise player order, beginning with the player having the starting player card.<br/>
-				<b>Business Round (BR):</b> During the BR, the presidents execute the actions of their stock companies according to the other two modules.
-			</p>
-		{{/company}}{{/full}}
-		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
-		{{#9.II}}<p>Play the game in <b>alternating</b> turns: SR, BR, SR, BR, SR, BR, etc.</p>{{/9.II}}
-	{{/capture}}
-	{{#hascapture}}
-	<div class="row section">
-		<div class="col-md-2 col-xs-2 {{#4}}{{#5}}mod5{{/5}}{{/4}}{{#9.I}} mod9{{/9.I}}{{#9.II}} mod9{{/9.II}}"><h1>Playing the Game</h1></div>
-		<div class="col-md-10 col-xs-10">{{{captured}}}</div>
-	</div>
-	{{/hascapture}}
 	<div class="row notes">
 		{{#2.II}}
 			<div class="note col-md-4 col-xs-4">
@@ -744,6 +727,24 @@
 	</div>
 </script>
 <script id="template_phase12" type="x-tmpl-mustache">
+	{{#capture}}
+		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities which are explored during the game.</p>{{/5}}{{/4}}
+		{{#full}}{{#company}}
+			<p>
+				<b>Share Round (SR):</b> During the SR, the players deal in shares of the 5 stock companies. This round is played in a clockwise player order, beginning with the player having the starting player card.<br/>
+				<b>Business Round (BR):</b> During the BR, the presidents execute the actions of their stock companies according to the other two modules.
+			</p>
+		{{/company}}{{/full}}
+		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
+		{{#9.II}}<p>Play the game in <b>alternating</b> turns: SR, BR, SR, BR, SR, BR, etc.</p>{{/9.II}}
+	{{/capture}}
+	{{#hascapture}}
+	<div class="row section">
+		<div class="col-md-2 col-xs-2 {{#4}}{{#5}}mod5{{/5}}{{/4}}{{#9.I}} mod9{{/9.I}}{{#9.II}} mod9{{/9.II}}"><h1>Playing the Game</h1></div>
+		<div class="col-md-10 col-xs-10">{{{captured}}}</div>
+	</div>
+	{{/hascapture}}
+
 	{{#company}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod9"><h1>Share Round</h1></div>
