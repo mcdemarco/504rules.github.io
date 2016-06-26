@@ -392,341 +392,9 @@
 	{{/3}}
 </script>
 <script id="template_examples" type="x-tmpl-mustache">
-	<div class="row notes">
-		{{#2.II}}
-			<div class="note col-md-4 col-xs-4">
-				<img src="img/example-2-ii.png" style="width: 100%">
-				<h2>Example Income:</h2>
-				<p>During his turn Paul placed first settlements on 1 field, 1 forest and city "4", additionally 1 settlement on city "1" where Rachel already has her settlement. He placed 1 resident each on top of both city cards. Now, he gets $90. $20 (base income for his capital) + $20 (1st settlements on field, forest and on city "4") + $50 (for his overall 2nd and 3rd resident on the city cards). Afterwards, he moves both residents to the bottom of the city cards.</p>
-			</div>
-		{{/2.II}}
-		{{#3}}
-			{{^3.III}}
-				<div class="note col-md-3 col-xs-4">
-					<h2>Calculation of taxes:</h2>
-					<p>To simplify this process, the {{^7.I}}{{^9.I}}first {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the highest income{{/7.I}}{{#9.I}}company with the highest income{{/9.I}} pays $2 taxes for each full $10 of this income, the other players except the {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pay $1 taxes for each full $10 of their income. The {{^7.I}}{{^9.I}}last {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pays $0 taxes.</p>
-					{{^7.I}}{{^9.I}}
-						<h2>Example:</h2>
-						<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
-					{{/9.I}}{{/7.I}}
-				</div>
-				{{#7.I}}
-					<div class="note col-md-3 col-xs-4">			
-						<h2>Example:</h2>
-						<p>The current player order is John, Camille, Sarah and Harry, and on the previous turn they earned $50, $68, $68 and $50 dollars respectively. Camille and Sarah have equal highest income ($68); as Camille is earlier in the turn she pays $2 for every full $10 income, in this case $12; John and Harry have equal lowest income; as Harry is later in the turn he doesn&rsquo;t pay any tax. Sarah and John pay $6 and $5 respsectively.</p>
-					</div>
-				{{/7.I}}
-				{{#9.I}}
-					<div class="note col-md-3 col-xs-4">
-						<h2>Example:</h2>
-						<p>The current company order is Orange, Blue, White, Green and Purple, and on the previous turn they earned $40, $68, $68, $40 and $50 dollars respectively. Blue and White have equal highest income ($68); as Blue is earlier in the turn she pays $2 for every full $10 income, in this case $12. Orange and Green have equal lowest income; as Green is later in the turn he doesn&rsquo;t pay any tax. White, Purple and Orange pay $6, $5 and $4 respectively. </p>
-					</div>
-				{{/9.I}}
-				<div class="note col-md-3 col-xs-6">
-					<h2>Factory:</h2>
-					<p>The players pay the following prices for building a factory on a city.</p>
-					<table>
-						<tr><th>1st <span class="factory bigicon"></span></th><th>2nd <span class="factory bigicon"></span></th><th>3rd <span class="factory bigicon"></span></th></tr>
-						<tr><td>$20</td><td>$30</td><td>$40</td></tr>
-					</table>
-				</div>
-			{{/3.III}}
-		{{/3}}
-		{{#1}}
-			<div class="note col-md-2 col-xs-4">
-				<h2>Prices for Upgrades</h2>
-				<table>
-					<tr><th>4, 5, 7 MP</th><td>each {{#1.III}}{{#residents}}$30{{/residents}}{{^residents}}$50{{/residents}}{{/1.III}}{{^1.III}}$50{{/1.III}}</td></tr>
-					<tr><th>2 cargo holds</th><td>{{#1.III}}$40{{/1.III}}{{^1.III}}$80{{/1.III}}</td></tr>
-				</table>
-			</div>
-			{{^residents}}
-				<div class="note col-md-3 col-xs-6">
-					<h2>Prices for additional movement points (MP)</h2>
-					<table>
-						<tr><th>Additional MP</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr>
-						<tr><th>Total costs</th><td>$20</td><td>$50</td><td>$90</td><td>$140</td><td>$200</td></tr>
-					</table>
-				</div>
-			{{/residents}}
-			{{#1.I}}
-				<div class="note col-md-6 col-xs-8">
-					<h2>Final Scoring:</h2>
-					<p>The player gets the following victory points (VP) for each of the five types of goods, dependent on the # of goods he delivered.</p>
-					<table>
-						<tr><th># of delivered goods of a single type</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5+</th></tr>
-						<tr><th>victory points (VP)</th><td>5 VP</td><td>9 VP</td><td>12 VP</td><td>14 VP</td><td>15 VP</td></tr>
-					</table>
-					<p>Additionally, the player gets 2 VP for each set containing all 5 different types of goods.</p>
-				</div>
-			{{/1.I}}
-		{{/1}}
-		{{#2.I}}
-			<div class="note col-md-4 col-xs-6">
-				<h2>Final Scoring:</h2>
-				<p>The player gets the following victory points (VP) for their population on X city cards, whereby X equals the # of cities triggering the game end.</p>
-				<table>
-					<tr><th># of city cards with population</th><th>X - 3 and less</th><th>X - 2</th><th>X - 1</th><th>X</th><th>X + 1 and more</th></tr>
-					<tr><th>victory points (VP)</th><td>22 VP</td><td>26 VP</td><td>32 VP</td><td>40 VP</td><td>50 VP</td></tr>
-				</table>
-				{{^residents}}<p>The player gets 1 additional VP for each movement point of his transport trolley he used to move out of the last reached city.</p>{{/residents}}
-			</div>
-			<div class="note col-md-3 col-xs-3">
-				<img src="img/example-2-i.png" style="width: 100%">
-				<p><b>Example Final Scoring:</b> In a game with 3 players Camille triggers the game end, as she placed population on 8 city cards. She gets 40 VP. Paul has only 7 population on city cards. Thus, Paul gets 32 VP. {{^residents}}Anne moved her transport trolley another 3 MP out of the last reached city. She gets an additional 3 VP.{{/residents}}</p>
-			</div>
-		{{/2.I}}
-		{{#4}}
-			{{^4.III}}
-				<div class="note col-md-12 col-xs-12">
-					<h2>Fight Sequence:</h2>
-					<ol>
-						<li>The attacker rolls 1 die for each attacking army. For each hit he removes 1 defending army (excess hits are forfeited).</li>
-						<li>Only if the defender suffers losses, he rolls 1 die for each of his removed armies. For each hit he removes 1 attacking army (excess hits are forfeited).</li>
-						<li>If all defending armies are removed and at least 1 attacking army survives, the attacker conquers the tile and exchanges 1 resident into 1 settlement. If at least 1 defending army survives, the attacker retreats all surviving armies into any adjacent areas under his control (in which are actual no fights).</li>
-					</ol>
-				</div>
-				<div class="note col-md-4 col-xs-6">
-					<h2>Dice Results:</h2>
-					<table>
-						<tr><th>dice result</th><th class="dice">⚀⚁</th><th class="dice">⚂⚃</th><th class="dice">⚄⚅</th></tr>
-						<tr><th>attack</th><td>0 hits</td><td>1 hit</td><td>2 hits</td></tr>
-						<tr><th>defense</th><td>0 hits</td><td colspan="2">1 hit</td></tr>
-					</table>
-				</div>
-				<div class="note col-md-4 col-xs-6">
-					<p>If the attacker attacks an opponent on...</p>
-					<p>... <span class="mountain bigicon"></span> or <span class="city bigicon"></span>: -1 for each single die roll of the attacker.</p>
-					<p>... <span class="grass bigicon"></span> or <span class="grain bigicon"></span>: +1 for each single die roll of the attacker.</p>
-				</div>
-			{{/4.III}}
-			{{#4.II}}
-				<div class="note col-md-3 col-xs-6">
-					<h2>Example Income:</h2>
-					<p>In addition to her capital Camille additionally controls 2 wood, 3 grasslands, 1 mountain and 2 city tiles. She gets an income of $70 = $20 (base income for the capital) + $40 (8 additional tiles) + $10 (3 different types of land tiles).</p>
-				</div>
-			{{/4.II}}
-			{{#4.III}}
-				<div class="note col-md-3 col-xs-6">
-					<h2>Fight Sequence:</h2>
-					<p>If the attacker moves 1 army onto an opposing tile, both players each remove 1 army on that tile. This process is repeated if necessary, until the last defending army is removed and the tile is neutralized.</p>
-				</div>
-			{{/4.III}}
-		{{/4}}
-		{{#5}}
-			<div class="note col-md-3 col-xs-4">
-				<h2>Example Exploring:</h2>
-				<img src="img/exploring-example.png" style="width: 100%">
-			</div>
-			{{#5.II}}
-				<div class="note col-md-3 col-xs-4">
-					<h2>Example Income:</h2>
-					<p>During the first few rounds Rachel explored 8 tiles and placed settlements first onto 6 tiles. Thus, she gets an income of $90 = $20 (base income for the capital) + $40 (8 explored tiles) + $30 (6 first settlements).</p>
-				</div>
-			{{/5.II}}
-		{{/5}}
-		{{#6}}
-			<div class="note col-md-4 col-xs-6">
-				<h2>Road:</h2>
-				<p>The player needs a # of active residents on 1 or both tiles to build a road there (depending on the more expensive terrain).</p>
-				<table>
-					<tr><th><span class="city bigicon"></span> / <span class="mountain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="desert bigicon"></span></th><th><span class="grain bigicon"></span> / <span class="grass bigicon"></span></th></tr>
-					<tr><td>3 residents</td><td>2 residents</td><td>1 resident</td></tr>
-				</table>
-				<p>Additionally the player needs +1 resident for each already build opposing road between 2 concerned tiles.</p>
-			</div>
-
-			{{#6.I}}
-				<div class="note col-md-4 col-xs-6">
-					<h2>Final Scoring:</h2>
-					<p>The player gets the following victory points (VP) for each of his tiles according to the majority board.</p>
-					<table>
-						<tr><th><span class="city bigicon"></span> / <span class="mountain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="grain bigicon"></span> / <span class="grass bigicon"></span></th><th><span class="desert bigicon"></th></tr>
-						<tr><td>3 VP</td><td>2 VP</td><td>1 VP</td></tr>
-					</table>
-					<p>Additionally 3 VP for each set consisting of 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert).</p>
-					<h2>Example Final Scoring:</h2>
-					<p>Anne scores a total of 58 VP: 27 (5 cities, 4 mountains) + 22 (4 grasslands, 2 forests, 5 fields) + 3 (3 deserts) + 6 (2 sets of all terrain types excluding desert).</p>
-				</div>
-			{{/6.I}}
-
-			{{#6.II}}
-				<div class="note col-md-3 col-xs-4">
-					<h2>Example Income:</h2>
-					<p>Anne gets a total of $75: $20 (Base income for the capital) + $10 (1 additional city) + $25 (1 grassland, 2 forest, 2 fields) + $10 (1 mountain) + $10 (1 set). The 3rd forest does not give her income in the moment, as until now she only connected 2 cities.</p>
-				</div>
-			{{/6.II}}
-		{{/6}}
-		{{#7.I}}
-			<div class="note col-md-4 col-xs-8">
-				<h2>Scoring:</h2>
-				<table>
-					<tr><th></th><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
-					<tr><th>1st place</th><td>10 VP</td><td>10 VP</td><td>9 VP</td><td>8 VP</td><td>7 VP</td><td>6 VP</td></tr>
-					<tr><th>2nd place (not for 2 players)</th><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
-				</table>
-				<p>In case of a tie for 1st place all concerned players each get 2 VP less (this applies for 2 players, too) and 0 VP for 2nd place. In case of a tie for 2nd place all concerned players get the stated VP.</p>
-				<p><b>Example Scoring:</b> In a game with 3 players Camille has majorities for cities, forests and a 2nd place for mountains. She gets 22 VP. Afterwards, she must remove 5 residents from the game map (1 resident for each 4 VP).</p>
-			</div>
-		{{/7.I}}
-		{{#7.II}}
-			<div class="note col-md-4 col-xs-8">
-				<h2>Income:</h2>
-				<p>The player gets the # of tiles x $10 for each majority, up to the stated maximum.</p>
-				<table>
-					<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
-					<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
-				</table>
-				<p>In case of a tie all concerned players get the calculated income up to the stated maximum.</p>
-				<p><b>Example Income:</b> Camille has majorities for grasslands (2 tiles) and fields (5 tiles). She gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures her majority, but does not increase her income!</p>
-			</div>
-		{{/7.II}}
-		{{#7.III}}
-			<div class="note col-md-4 col-xs-8">
-				<h2>Final Scoring:</h2>
-				<p>The player gets additional victory points (VP) for majorities. In case of a tie all players with the majority get the stated VP.</p>
-				<table>
-					<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
-					<tr><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
-				</table>
-				<p><b>Example Final Scoring:</b> Camille has majorities for forests and mountains. She gets additional 8 VP.</p>
-			</div>
-		{{/7.III}}
-		{{#8}}
-			<div class="note col-md-3 col-xs-6">
-				<h2>Plant:</h2>
-				<p>The player needs a # of active residents on the matching tile to build the plant.</p>
-				<table>
-					<tr><th><span class="grass bigicon"></span> / <span class="grain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="water-adjacent bigicon"></span>*</th><th><span class="mountain bigicon"></span></th></tr>
-					<tr><th>1 resident</th><th>2 residents</th><th>3 residents</th></tr>
-				</table>
-				<p>* On a land tile next to water, the player may build 1 fish-plant.</p>
-			</div>
-
-			{{^8.III}}
-				<div class="note col-md-3 col-xs-6">
-					<h2>Trading House:</h2>
-					<p>The player must pay money for his trading house, depending on the # of players/{{#4}}militia/{{/4}}stock companies already having their trading houses in that city.</p>
-					<table>
-						<tr><th>First</th><th>Second</th><th>Third</th><th>Fourth</th>
- 							{{^company}}{{#4}}<th>Fifth</th>{{/4}}{{/company}}
-							{{#company}}<th>Fifth</th>{{#4}}<th>Sixth</th>{{/4}}{{/company}}</tr>
-						<tr><td>$0</td><td>$10</td><td>$20</td><td>$30</td>
-							{{^company}}{{#4}}<td>$40</td>{{/4}}{{/company}}
-							{{#company}}<td>$40</td>{{#4}}<td>$50</td>{{/4}}{{/company}}</tr>
-					</table>
-				</div>
-			{{/8.III}}
-
-			{{#8.I}}
-				<div class="note col-md-4 col-xs-6">
-					<h2>Final Scoring:</h2>
-					<p>The player gets 2 VP for each trading house (including his headquarters in the capital). Additionally the player gets VP for each set of different types of goods.</p>
-					<table>
-						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-						<tr><th>Total VP</th><td>1 VP</td><td>3 VP</td><td>6 VP</td><td>10 VP</td><td>15 VP</td></tr>
-					</table>
-					<p><b>Example Final Scoring:</b> Paul owns 5 trading houses (including his headquarters) and can score up to 6 goods. He built a total of 9 plants and received 9 goods (3 wheat, 3 cattle, 2 fish, 1 wood). He misses ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. Afterwards, he gets 26 VP = 10 (for 5 trading houses) + 15 (set with 5 different goods) + 1 (set with 1 wheat). He scored the maximum number goods, so he does not get VP for the surplus cattle and fish.</p>
-				</div>
-			{{/8.I}}
-			{{#8.II}}
-				<div class="note col-md-4 col-xs-6">
-					<h2>Goods Sale:</h2>
-					<p>The player gets income for each set of different types of goods.</p>
-					<table>
-						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
-					</table>
-					<p><b>Example Income:</b> Paul owns 5 trading houses (including his headquarters) and can sell up to 6 goods to them. He built 8 plants and now gets 8 goods (3 wheat, 2 cattle, 2 fish, 1 wood). He misses 1 ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. H e gets $130 = $20 (base income for his capital) + $100 (set with 5 different goods) + $10 (set with 1 good). He sold the maximum number of 6 goods to his trading houses and stores the surplus wheat face up in front of him for a later sale.</p>
-				</div>
-			{{/8.II}}
-		{{/8}}
-		{{#9.I}}
-			<div class="note col-md-12 col-xs-12">
-				<p><b>Calculation of Dividends:</b> The company pays $1 dividends for each full $10 income to each share ($2 to the president&rsquo;s share)</p>
-				<p><b>Example:</b> The green company gets an income of $68. Thus, it pays $6 dividends. Camille is the only player owning 5 shares and gets $30. The company gets the remaining $38 for their company assets.</p>
-			</div>
-		{{/9.I}}
-		{{#9.II}}
-			<div class="note col-md-12 col-xs-12">
-				<p><b>Calculation of Dividends:</b> The company pays $1 dividends for each full $20 income to each share ($2 to the president&rsquo;s share).</p>
-			</div>
-			<div class="note col-md-8 col-xs-8">
-				<p><b>Bonus VP at the Final Scoring:</b> The stock companies with the most victory points (VP) get additional VP.</p>
-				<table>
-					<tr><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th><th>5th company</th></tr>
-					<tr><td>5 VP</td><td>3 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
-				</table>
-			</div>
-			<div class="note col-md-4 col-xs-4">
-				<p>In case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
-				<p><b>Example:</b> If 2 companies share the 2nd place, each company gets additional 3 VP = (3 + 2) / 2.</p>
-			</div>
-			
-			{{#2.I}}
-				<div class="note col-md-4 col-xs-4">
-					<img src="img/example-2-ii.png" style="width: 100%">
-					<h2>Example Income:</h2>
-					<p>The green company placed first settlements on 1 field, 1 forest and city "5", additionally 1 settlement on city "1" where the red company already has a settlement. The company placed 1 resident each on top of both city cards. Now, the company gets $90. $20 (base income for the capital) + $20 (1st settlements on field, forest and on city "5") + $50 (for overall 2nd and 3rd resident on the city cards). Afterwards, the company moves both residents to the bottom of the city cards.</p>
-				</div>
-			{{/2.I}}
-			{{#4.I}}
-				<div class="note col-md-3 col-xs-6">
-					<h2>Example Income:</h2>
-					<p>In addition to its capital the green company additionally controls 2 wood, 3 grasslands, 1 mountain and 2 city tiles. The company gets an income of $70 = $20 (base income for the capital) + $40 (8 additional tiles) + $10 (3 different types of land tiles).</p>
-				</div>
-			{{/4.I}}
-			{{#5.I}}
-				<div class="note col-md-3 col-xs-4">
-					<h2>Example Income:</h2>
-					<p>During the first few rounds the green company explored 8 tiles and placed settlements first onto 6 tiles. Thus, the company gets an income of $90 = $20 (base income for the capital) + $40 (8 explored tiles) + $30 (6 first settlements).</p>
-				</div>
-			{{/5.I}}
-			{{#6.I}}
-				<div class="note col-md-3 col-xs-4">
-					<h2>Example Income:</h2>
-					<p>The green company gets a total of $75: $20 (Base income for the capital) + $10 (1 additional city) + $25 (1 grassland, 2 forest, 2 fields) + $10 (1 mountain) + $10 (1 set). The 3rd forest does not give the company income in the moment, as until now it only connected 2 cities.</p>
-				</div>
-			{{/6.I}}
-			{{#7.I}}
-				<div class="note col-md-4 col-xs-8">
-					<h2>Income:</h2>
-					<p>The company gets the # of tiles x $10 for each majority, up to the stated maximum.</p>
-					<table>
-						<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
-						<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
-					</table>
-					<p>In case of a tie all concerned companies get the calculated income up to the stated maximum.</p>
-					<p><b>Example Income:</b> The green company has majorities for grasslands (2 tiles) and fields (% tiles). The company gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures the majority, but does not increase the company&rsquo;s income!</p>
-				</div>
-			{{/7.I}}
-			{{#8.I}}
-				<div class="note col-md-4 col-xs-6">
-					<h2>Goods Sale:</h2>
-					<p>The company gets income for each set of different types of goods.</p>
-					<table>
-						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
-					</table>
-				</div>
-			{{/8.I}}
-		{{/9.II}}
-		{{#9.III}}
-			<div class="note col-md-8 col-xs-8">
-				<p><b>Bonus VP at the Final Scoring:</b> The player&rsquo;s stock companies with the most victory points (VP) get additional VP.</p>
-				<table>
-					<tr><th></th><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th></tr>
-					<tr><th>2 ♟</th><td>3 VP</td><td>0 VP</td><td></td><td></td></tr>
-					<tr><th>3 ♟</th><td>3 VP</td><td>1 VP</td><td>0 VP</td><td></td></tr>
-					<tr><th>4 ♟</th><td>4 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
-				</table>
-			</div>
-			<div class="note col-md-3 col-xs-4">
-				<p>In the case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
-				<p><b>Example:</b> In a game with 4 players, if 2 companies share the 2nd place, each company gets additional 2 VP = (2 + 1) / 2.</p>
-			</div>
-		{{/9.III}}
-	</div>
+	{{^full}}
+	<div class="row notes"></div>
+	{{/full}}
 </script>
 <script id="template_phase12" type="x-tmpl-mustache">
 	{{#capture}}
@@ -794,7 +462,7 @@
 		{{#3}}{{^3.III}}{{^9.I}}{{^7.I}}
 			<p>At game start, all players make a secret bid with their starting money ($0 is a valid bid). Starting with the highest bidder, each player chooses a position in the player order{{^9.II}}{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}, all capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}} and his capital on the map.{{/mapnum.5}}{{/mapnum.4}}{{/9.II}}{{#9.II}} for the first share round (SR).{{/9.II}} In case of a tie, randomly draw lots for the order of choice (the losers get $2 for each lost draw).</p>
 			{{#9.II}}<p>The stock company order for the 1st business round (BR) is determined in reverse order of establishment. If stock companies are only established in later SRs, just for once they are first in stock company order in the next BR!</p>{{/9.II}}
-			<p>Starting with the 2nd round, determine the {{owner}} order according to the income of the former round, from high to low (in case of a tie reverse the {{owner}} order of the former round for the tied {{owners}}). According to the new {{owner}} order the {{owners}} must pay taxes for their last income: The 1st {{owner}} pays 20%, the last pays 0%, and all other {{owners}} pay 10% of their last income, see left for <b>Calculation of taxes</b>. Because of higher taxes the 1st {{owner}} may get a lower income compared to the 2nd.</p>
+			<p>Starting with the 2nd round, determine the {{owner}} order according to the income of the former round, from high to low (in case of a tie reverse the {{owner}} order of the former round for the tied {{owners}}). According to the new {{owner}} order the {{owners}} must pay taxes for their last income: The 1st {{owner}} pays 20%, the last pays 0%, and all other {{owners}} pay 10% of their last income, see <b>Calculation of taxes</b>. Because of higher taxes the 1st {{owner}} may get a lower income compared to the 2nd.</p>
 		{{/7.I}}{{/9.I}}{{/3.III}}{{/3}}
 		{{#7.I}}
 			{{^9.II}}
@@ -820,6 +488,32 @@
 				<p>The stock companies pay taxes from their company assets. If they do not have enough money or are dead broke, they pay their remaining money. The presidents do not pay remaining taxes!</p>
 			{{/3.II}}			
 		{{/7.I}}{{/3.I}}{{/company}}
+
+			{{#3}}
+			{{^3.III}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Calculation of taxes:</h2>
+					<p>To simplify this process, the {{^7.I}}{{^9.I}}first {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the highest income{{/7.I}}{{#9.I}}company with the highest income{{/9.I}} pays $2 taxes for each full $10 of this income, the other players except the {{^7.I}}{{^9.I}}last player{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pay $1 taxes for each full $10 of their income. The {{^7.I}}{{^9.I}}last {{owner}}{{/9.I}}{{/7.I}}{{#7.I}}player with the lowest income{{/7.I}}{{#9.I}}company with the lowest income{{/9.I}} pays $0 taxes.</p>
+					{{^7.I}}{{^9.I}}
+						<h2>Example:</h2>
+						<p>Camille gets an income of $68. Thus, she must pay $12 taxes for the full $60 of her income for being first.</p>
+					{{/9.I}}{{/7.I}}
+				</div>
+				{{#7.I}}
+					<div class="note col-md-3 col-xs-4">
+						<h2>Example:</h2>
+						<p>The current player order is John, Camille, Sarah and Harry, and on the previous turn they earned $50, $68, $68 and $50 dollars respectively. Camille and Sarah have equal highest income ($68); as Camille is earlier in the turn she pays $2 for every full $10 income, in this case $12; John and Harry have equal lowest income; as Harry is later in the turn he doesn&rsquo;t pay any tax. Sarah and John pay $6 and $5 respsectively.</p>
+					</div>
+				{{/7.I}}
+				{{#9.I}}
+					<div class="note col-md-3 col-xs-4">
+						<h2>Example:</h2>
+						<p>The current company order is Orange, Blue, White, Green and Purple, and on the previous turn they earned $40, $68, $68, $40 and $50 dollars respectively. Blue and White have equal highest income ($68); as Blue is earlier in the turn she pays $2 for every full $10 income, in this case $12. Orange and Green have equal lowest income; as Green is later in the turn he doesn&rsquo;t pay any tax. White, Purple and Orange pay $6, $5 and $4 respectively. </p>
+					</div>
+				{{/9.I}}
+			{{/3.III}}
+		{{/3}}
+
 	{{/capture}}
 	{{#hascapture}}
 		{{#full}}{{#company}}
@@ -879,6 +573,22 @@
 		{{/3.III}}
 		{{#1}}
 			<p>The {{agent}} may buy exactly 1 upgrade for {{fowns}} transport trolley per turn, either a bigger cargo hold or more movement points, see table <b>Prices for Upgrades</b>.</p>
+			<div class="note col-md-2 col-xs-4">
+				<h2>Prices for Upgrades</h2>
+				<table>
+					<tr><th>4, 5, 7 MP</th><td>each {{#1.III}}{{#residents}}$30{{/residents}}{{^residents}}$50{{/residents}}{{/1.III}}{{^1.III}}$50{{/1.III}}</td></tr>
+					<tr><th>2 cargo holds</th><td>{{#1.III}}$40{{/1.III}}{{^1.III}}$80{{/1.III}}</td></tr>
+				</table>
+			</div>
+			{{^residents}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Prices for additional movement points (MP)</h2>
+					<table>
+						<tr><th>Additional MP</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr>
+						<tr><th>Total costs</th><td>$20</td><td>$50</td><td>$90</td><td>$140</td><td>$200</td></tr>
+					</table>
+				</div>
+			{{/residents}}
 		{{/1}}
 		{{#8.III}}
 			<p>Starting with the 2nd round the {{agent}} may buy only at max 2 more residents than the # of plants {{^company}}he{{/company}}{{#company}}the company{{/company}} owns in each turn.</p>
@@ -1021,7 +731,52 @@
 				{{#4}}<p>Any number of {{owners}} may build trading houses on each city (no fights on cities). The {{agent}}s must take the trading houses of the militia into account, so even the first {{owner}} must pay money to build {{owns}} trading house!</p>{{/4}}
 			{{/8.III}}
 		{{/8}}
-	{{/residents}}{{/capture}}
+	{{/residents}}
+			{{#4.III}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Fight Sequence:</h2>
+					<p>If the attacker moves 1 army onto an opposing tile, both players each remove 1 army on that tile. This process is repeated if necessary, until the last defending army is removed and the tile is neutralized.</p>
+				</div>
+			{{/4.III}}
+		{{#5}}
+			<div class="note col-md-3 col-xs-4">
+				<h2>Example Exploring:</h2>
+				<img src="img/exploring-example.png" style="width: 100%">
+			</div>
+		{{/5}}
+		{{#6}}
+			<div class="note col-md-4 col-xs-6">
+				<h2>Road:</h2>
+				<p>The player needs a # of active residents on 1 or both tiles to build a road there (depending on the more expensive terrain).</p>
+				<table>
+					<tr><th><span class="city bigicon"></span> / <span class="mountain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="desert bigicon"></span></th><th><span class="grain bigicon"></span> / <span class="grass bigicon"></span></th></tr>
+					<tr><td>3 residents</td><td>2 residents</td><td>1 resident</td></tr>
+				</table>
+				<p>Additionally the player needs +1 resident for each already built opposing road between 2 concerned tiles.</p>
+			</div>
+		{{/6}}
+		{{#8}}
+			<div class="note col-md-3 col-xs-6">
+				<h2>Plant:</h2>
+				<p>The player needs a # of active residents on the matching tile to build the plant.</p>
+				<table>
+					<tr><th><span class="grass bigicon"></span> / <span class="grain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="water-adjacent bigicon"></span>*</th><th><span class="mountain bigicon"></span></th></tr>
+					<tr><th>1 resident</th><th>2 residents</th><th>3 residents</th></tr>
+				</table>
+				<p>* On a land tile next to water, the player may build 1 fish-plant.</p>
+			</div>
+			{{^8.III}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Trading House:</h2>
+					<p>The player must pay money for his trading house, depending on the # of players/stock companies already having their trading houses in that city.</p>
+					<table>
+						<tr><th>First</th><th>Second</th><th>Third</th><th>Fourth</th></tr>
+						<tr><td>$0</td><td>$10</td><td>$20</td><td>$30</td></tr>
+					</table>
+				</div>
+			{{/8.III}}
+		{{/8}}
+	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 3 D: Residents</h1></div>
@@ -1096,6 +851,14 @@
 			<div class="col-md-10 col-xs-10">
 				<p>Each round, the {{agent}} may buy at max 1 factory on each city, If the {{owner}} has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The {{owner}} immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the {{owners}} in common may build a total of 3 factories.
 				<p>The {{owner}} marks {{owns}} factory with {{owns}} settlement. If the {{owner}} owns several factories in the same city, {{^company}}he{{/company}}{{#company}}it{{/company}} stacks them below {{owns}} settlement.</p>
+				<div class="note col-md-3 col-xs-6">
+					<h2>Factory:</h2>
+					<p>The players pay the following prices for building a factory on a city.</p>
+					<table>
+						<tr><th>1st <span class="factory bigicon"></span></th><th>2nd <span class="factory bigicon"></span></th><th>3rd <span class="factory bigicon"></span></th></tr>
+						<tr><td>$20</td><td>$30</td><td>$40</td></tr>
+					</table>
+				</div>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
@@ -1109,6 +872,33 @@
 			{{/4.III}}{{/4}}
 			{{#4.II}}{{#9.I}}<p>If the attacking stock company conquers an opposing capital, it also conquers all other tiles of the defender and exchanges the armies with its own. If it only neutralizes the opposing capital, the defender loses all of his tiles without the attacker conquering them. Afterwards, the players lose all shares of the defeated stock company without substitution. The stock company starts anew and may be established again by the players in the next share round (SR).</p>{{/9.I}}{{/4.II}}
 		{{/2}}
+
+		{{#4}}
+			{{^4.III}}
+				<div class="note col-md-12 col-xs-12">
+					<h2>Fight Sequence:</h2>
+					<ol>
+						<li>The attacker rolls 1 die for each attacking army. For each hit he removes 1 defending army (excess hits are forfeited).</li>
+						<li>Only if the defender suffers losses, he rolls 1 die for each of his removed armies. For each hit he removes 1 attacking army (excess hits are forfeited).</li>
+						<li>If all defending armies are removed and at least 1 attacking army survives, the attacker conquers the tile and exchanges 1 resident into 1 settlement. If at least 1 defending army survives, the attacker retreats all surviving armies into any adjacent areas under his control (in which are actual no fights).</li>
+					</ol>
+				</div>
+				<div class="note col-md-4 col-xs-6">
+					<h2>Dice Results:</h2>
+					<table>
+						<tr><th>dice result</th><th class="dice">⚀⚁</th><th class="dice">⚂⚃</th><th class="dice">⚄⚅</th></tr>
+						<tr><th>attack</th><td>0 hits</td><td>1 hit</td><td>2 hits</td></tr>
+						<tr><th>defense</th><td>0 hits</td><td colspan="2">1 hit</td></tr>
+					</table>
+				</div>
+				<div class="note col-md-4 col-xs-6">
+					<p>If the attacker attacks an opponent on...</p>
+					<p>... <span class="mountain bigicon"></span> or <span class="city bigicon"></span>: -1 for each single die roll of the attacker.</p>
+					<p>... <span class="grass bigicon"></span> or <span class="grain bigicon"></span>: +1 for each single die roll of the attacker.</p>
+				</div>
+			{{/4.III}}
+		{{/4}}
+
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -1198,6 +988,104 @@
 		{{^company}}{{#3.I}}
 			<p>The players place their income for now to one side, until they pay taxes in the next Phase 1.</p>
 		{{/3.I}}{{/company}}
+
+		{{#2.II}}
+			<div class="note col-md-4 col-xs-4">
+				<img src="img/example-2-ii.png" style="width: 100%">
+				<h2>Example Income:</h2>
+				<p>During his turn Paul placed first settlements on 1 field, 1 forest and city "4", additionally 1 settlement on city "1" where Rachel already has her settlement. He placed 1 resident each on top of both city cards. Now, he gets $90. $20 (base income for his capital) + $20 (1st settlements on field, forest and on city "4") + $50 (for his overall 2nd and 3rd resident on the city cards). Afterwards, he moves both residents to the bottom of the city cards.</p>
+			</div>
+		{{/2.II}}
+		{{#4.II}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Example Income:</h2>
+					<p>In addition to her capital Camille additionally controls 2 wood, 3 grasslands, 1 mountain and 2 city tiles. She gets an income of $70 = $20 (base income for the capital) + $40 (8 additional tiles) + $10 (3 different types of land tiles).</p>
+				</div>
+		{{/4.II}}
+		{{#5.II}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Example Income:</h2>
+					<p>During the first few rounds Rachel explored 8 tiles and placed settlements first onto 6 tiles. Thus, she gets an income of $90 = $20 (base income for the capital) + $40 (8 explored tiles) + $30 (6 first settlements).</p>
+				</div>
+		{{/5.II}}
+		{{#6.II}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Example Income:</h2>
+					<p>Anne gets a total of $75: $20 (Base income for the capital) + $10 (1 additional city) + $25 (1 grassland, 2 forest, 2 fields) + $10 (1 mountain) + $10 (1 set). The 3rd forest does not give her income in the moment, as until now she only connected 2 cities.</p>
+				</div>
+		{{/6.II}}
+		{{#7.II}}
+			<div class="note col-md-4 col-xs-8">
+				<h2>Income:</h2>
+				<p>The player gets the # of tiles x $10 for each majority, up to the stated maximum.</p>
+				<table>
+					<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+					<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
+				</table>
+				<p>In case of a tie all concerned players get the calculated income up to the stated maximum.</p>
+				<p><b>Example Income:</b> Camille has majorities for grasslands (2 tiles) and fields (5 tiles). She gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures her majority, but does not increase her income!</p>
+			</div>
+		{{/7.II}}
+		{{#8.II}}
+				<div class="note col-md-4 col-xs-6">
+					<h2>Goods Sale:</h2>
+					<p>The player gets income for each set of different types of goods.</p>
+					<table>
+						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
+					</table>
+					<p><b>Example Income:</b> Paul owns 5 trading houses (including his headquarters) and can sell up to 6 goods to them. He built 8 plants and now gets 8 goods (3 wheat, 2 cattle, 2 fish, 1 wood). He misses 1 ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. H e gets $130 = $20 (base income for his capital) + $100 (set with 5 different goods) + $10 (set with 1 good). He sold the maximum number of 6 goods to his trading houses and stores the surplus wheat face up in front of him for a later sale.</p>
+				</div>
+		{{/8.II}}
+		{{#9.II}}
+			{{#2.I}}
+				<div class="note col-md-4 col-xs-4">
+					<img src="img/example-2-ii.png" style="width: 100%">
+					<h2>Example Income:</h2>
+					<p>The green company placed first settlements on 1 field, 1 forest and city "5", additionally 1 settlement on city "1" where the red company already has a settlement. The company placed 1 resident each on top of both city cards. Now, the company gets $90. $20 (base income for the capital) + $20 (1st settlements on field, forest and on city "5") + $50 (for overall 2nd and 3rd resident on the city cards). Afterwards, the company moves both residents to the bottom of the city cards.</p>
+				</div>
+			{{/2.I}}
+			{{#4.I}}
+				<div class="note col-md-3 col-xs-6">
+					<h2>Example Income:</h2>
+					<p>In addition to its capital the green company additionally controls 2 wood, 3 grasslands, 1 mountain and 2 city tiles. The company gets an income of $70 = $20 (base income for the capital) + $40 (8 additional tiles) + $10 (3 different types of land tiles).</p>
+				</div>
+			{{/4.I}}
+			{{#5.I}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Example Income:</h2>
+					<p>During the first few rounds the green company explored 8 tiles and placed settlements first onto 6 tiles. Thus, the company gets an income of $90 = $20 (base income for the capital) + $40 (8 explored tiles) + $30 (6 first settlements).</p>
+				</div>
+			{{/5.I}}
+			{{#6.I}}
+				<div class="note col-md-3 col-xs-4">
+					<h2>Example Income:</h2>
+					<p>The green company gets a total of $75: $20 (Base income for the capital) + $10 (1 additional city) + $25 (1 grassland, 2 forest, 2 fields) + $10 (1 mountain) + $10 (1 set). The 3rd forest does not give the company income in the moment, as until now it only connected 2 cities.</p>
+				</div>
+			{{/6.I}}
+			{{#7.I}}
+				<div class="note col-md-4 col-xs-8">
+					<h2>Income:</h2>
+					<p>The company gets the # of tiles x $10 for each majority, up to the stated maximum.</p>
+					<table>
+						<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+						<tr><td>max. $50</td><td>max. $50</td><td>max. $45</td><td>max. $40</td><td>max. $35</td><td>max. $30</td></tr>
+					</table>
+					<p>In case of a tie all concerned companies get the calculated income up to the stated maximum.</p>
+					<p><b>Example Income:</b> The green company has majorities for grasslands (2 tiles) and fields (% tiles). The company gets a total of $80 = $20 (base income for the capital) + $20 (for 2 grasslands) + $40 (maximum for 4 fields). The additional field only secures the majority, but does not increase the company&rsquo;s income!</p>
+				</div>
+			{{/7.I}}
+			{{#8.I}}
+				<div class="note col-md-4 col-xs-6">
+					<h2>Goods Sale:</h2>
+					<p>The company gets income for each set of different types of goods.</p>
+					<table>
+						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>Income for each set</th><td>$10</td><td>$25</td><td>$45</td><td>$70</td><td>$100</td></tr>
+					</table>
+				</div>
+			{{/8.I}}
+		{{/9.II}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -1251,6 +1139,17 @@
 					<p>Raise the actual share values of the 2 stock companies with the highest and second highest income by $10. Drop the actual share values of all companies with lowest income by $10. Mark all changes of the actual share values on the share value board in order of the former share values from high to low.</p>
 					<p>All stock companies pay a dividend to players and the bank. The presidents keep the remaining income and place it on the company assets. See the <b>Calculation of Dividends</b>.</p>
 				{{/9.II}}
+				{{#9.I}}
+				<div class="note col-md-12 col-xs-12">
+					<p><b>Calculation of Dividends:</b> The company pays $1 dividends for each full $10 income to each share ($2 to the president&rsquo;s share)</p>
+					<p><b>Example:</b> The green company gets an income of $68. Thus, it pays $6 dividends. Camille is the only player owning 5 shares and gets $30. The company gets the remaining $38 for their company assets.</p>
+				</div>
+				{{/9.I}}
+				{{#9.II}}
+				<div class="note col-md-12 col-xs-12">
+					<p><b>Calculation of Dividends:</b> The company pays $1 dividends for each full $20 income to each share ($2 to the president&rsquo;s share).</p>
+				</div>
+				{{/9.II}}
 			</div>
 		</div>
 	{{/company}}
@@ -1261,6 +1160,18 @@
 			<p><b>1st and 2nd Scoring:</b> The {{owners}} get victory points (VP) for their majorities, see table and example <b>Scoring</b>.</p>
 			<p><b>3rd Scoring (Final Scoring):</b> The {{owners}} get victory points (VP) for their majorities, see the table and example <b>Scoring</b>. All {{owners}} missing their last turn get once-only additional 3 VP.</p>
 			<p>Following each scoring, the {{owners}} add the VP they got in the actual scoring. Starting with the {{owner}} getting the most VP, each {{agent}} must remove 1 resident for each {{^9.II}}3 VP (2♟) or 4 VP (3♟, 4♟){{/9.II}}{{#9.II}}4 VP{{/9.II}} from the map. If he has not enough residents, he now must remove 1 settlement for each missing resident, so all remaining settlements are still on connected tiles to {{fowns}} capital. He cannot remove the headquarters on {{fowns}} capital. If the {{agent}} cannot remove enough residents and settlements, he does not score the VPs for those pieces. Afterwards, the {{agent}} must adjust {{fowns}} marking tokens on the majority board. In case of a tie for VP use the actual turn order for concerned {{owners}}.</p>
+
+			<div class="note col-md-4 col-xs-8">
+				<h2>Scoring:</h2>
+				<table>
+					<tr><th></th><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+					<tr><th>1st place</th><td>10 VP</td><td>10 VP</td><td>9 VP</td><td>8 VP</td><td>7 VP</td><td>6 VP</td></tr>
+					<tr><th>2nd place (not for 2 players)</th><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
+				</table>
+				<p>In case of a tie for 1st place all concerned players each get 2 VP less (this applies for 2 players, too) and 0 VP for 2nd place. In case of a tie for 2nd place all concerned players get the stated VP.</p>
+				<p><b>Example Scoring:</b> In a game with 3 players Camille has majorities for cities, forests and a 2nd place for mountains. She gets 22 VP. Afterwards, she must remove 5 residents from the game map (1 resident for each 4 VP).</p>
+			</div>
+
 		{{/7.I}}
 	{{/capture}}
 	{{#hascapture}}
@@ -1443,6 +1354,98 @@
 				<p>The player with the most VP wins the game! In case of a tie, the tied player with the most plants wins the game.</p>
 			{{/8.I}}
 		{{/9}}
+
+		{{#1}}
+			{{#1.I}}
+				<div class="note col-md-6 col-xs-8">
+					<h2>Final Scoring:</h2>
+					<p>The player gets the following victory points (VP) for each of the five types of goods, dependent on the # of goods he delivered.</p>
+					<table>
+						<tr><th># of delivered goods of a single type</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5+</th></tr>
+						<tr><th>victory points (VP)</th><td>5 VP</td><td>9 VP</td><td>12 VP</td><td>14 VP</td><td>15 VP</td></tr>
+					</table>
+					<p>Additionally, the player gets 2 VP for each set containing all 5 different types of goods.</p>
+				</div>
+			{{/1.I}}
+		{{/1}}
+		{{#2.I}}
+			<div class="note col-md-4 col-xs-6">
+				<h2>Final Scoring:</h2>
+				<p>The player gets the following victory points (VP) for their population on X city cards, whereby X equals the # of cities triggering the game end.</p>
+				<table>
+					<tr><th># of city cards with population</th><th>X - 3 and less</th><th>X - 2</th><th>X - 1</th><th>X</th><th>X + 1 and more</th></tr>
+					<tr><th>victory points (VP)</th><td>22 VP</td><td>26 VP</td><td>32 VP</td><td>40 VP</td><td>50 VP</td></tr>
+				</table>
+				{{^residents}}<p>The player gets 1 additional VP for each movement point of his transport trolley he used to move out of the last reached city.</p>{{/residents}}
+			</div>
+			<div class="note col-md-3 col-xs-3">
+				<img src="img/example-2-i.png" style="width: 100%">
+				<p><b>Example Final Scoring:</b> In a game with 3 players Camille triggers the game end, as she placed population on 8 city cards. She gets 40 VP. Paul has only 7 population on city cards. Thus, Paul gets 32 VP. {{^residents}}Anne moved her transport trolley another 3 MP out of the last reached city. She gets an additional 3 VP.{{/residents}}</p>
+			</div>
+		{{/2.I}}
+		{{#6.I}}
+				<div class="note col-md-4 col-xs-6">
+					<h2>Final Scoring:</h2>
+					<p>The player gets the following victory points (VP) for each of his tiles according to the majority board.</p>
+					<table>
+						<tr><th><span class="city bigicon"></span> / <span class="mountain bigicon"></span></th><th><span class="forest bigicon"></span> / <span class="grain bigicon"></span> / <span class="grass bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+						<tr><td>3 VP</td><td>2 VP</td><td>1 VP</td></tr>
+					</table>
+					<p>Additionally 3 VP for each set consisting of 1 city, 1 grassland, 1 field, 1 forest, 1 mountain (no desert).</p>
+					<h2>Example Final Scoring:</h2>
+					<p>Anne scores a total of 58 VP: 27 (5 cities, 4 mountains) + 22 (4 grasslands, 2 forests, 5 fields) + 3 (3 deserts) + 6 (2 sets of all terrain types excluding desert).</p>
+				</div>
+		{{/6.I}}
+		{{#7.III}}
+			<div class="note col-md-4 col-xs-8">
+				<h2>Final Scoring:</h2>
+				<p>The player gets additional victory points (VP) for majorities. In case of a tie all players with the majority get the stated VP.</p>
+				<table>
+					<tr><th><span class="city bigicon"></span></th><th><span class="grass bigicon"></span></th><th><span class="forest bigicon"></span></th><th><span class="grain bigicon"></span></th><th><span class="mountain bigicon"></span></th><th><span class="desert bigicon"></th></tr>
+					<tr><td>6 VP</td><td>6 VP</td><td>5 VP</td><td>4 VP</td><td>3 VP</td><td>2 VP</td></tr>
+				</table>
+				<p><b>Example Final Scoring:</b> Camille has majorities for forests and mountains. She gets additional 8 VP.</p>
+			</div>
+		{{/7.III}}
+		{{#8.I}}
+				<div class="note col-md-4 col-xs-6">
+					<h2>Final Scoring:</h2>
+					<p>The player gets 2 VP for each trading house (including his headquarters in the capital). Additionally the player gets VP for each set of different types of goods.</p>
+					<table>
+						<tr><th># of different types of goods</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+						<tr><th>Total VP</th><td>1 VP</td><td>3 VP</td><td>6 VP</td><td>10 VP</td><td>15 VP</td></tr>
+					</table>
+					<p><b>Example Final Scoring:</b> Paul owns 5 trading houses (including his headquarters) and can score up to 6 goods. He built a total of 9 plants and received 9 goods (3 wheat, 3 cattle, 2 fish, 1 wood). He misses ore for a complete set of 5 different goods, so he exchanges 1 wheat and 1 cattle for 1 ore. Afterwards, he gets 26 VP = 10 (for 5 trading houses) + 15 (set with 5 different goods) + 1 (set with 1 wheat). He scored the maximum number goods, so he does not get VP for the surplus cattle and fish.</p>
+				</div>
+		{{/8.I}}
+		{{#9.II}}
+			<div class="note col-md-8 col-xs-8">
+				<p><b>Bonus VP at the Final Scoring:</b> The stock companies with the most victory points (VP) get additional VP.</p>
+				<table>
+					<tr><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th><th>5th company</th></tr>
+					<tr><td>5 VP</td><td>3 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
+				</table>
+			</div>
+			<div class="note col-md-4 col-xs-4">
+				<p>In case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
+				<p><b>Example:</b> If 2 companies share the 2nd place, each company gets additional 3 VP = (3 + 2) / 2.</p>
+			</div>
+		{{/9.II}}
+		{{#9.III}}
+			<div class="note col-md-8 col-xs-8">
+				<p><b>Bonus VP at the Final Scoring:</b> The player&rsquo;s stock companies with the most victory points (VP) get additional VP.</p>
+				<table>
+					<tr><th></th><th>1st company</th><th>2nd company</th><th>3rd company</th><th>4th company</th></tr>
+					<tr><th>2 ♟</th><td>3 VP</td><td>0 VP</td><td></td><td></td></tr>
+					<tr><th>3 ♟</th><td>3 VP</td><td>1 VP</td><td>0 VP</td><td></td></tr>
+					<tr><th>4 ♟</th><td>4 VP</td><td>2 VP</td><td>1 VP</td><td>0 VP</td></tr>
+				</table>
+			</div>
+			<div class="note col-md-3 col-xs-4">
+				<p>In the case of a tie add the VP of the respective places for the concerned companies and divide them (round up).</p>
+				<p><b>Example:</b> In a game with 4 players, if 2 companies share the 2nd place, each company gets additional 2 VP = (2 + 1) / 2.</p>
+			</div>
+		{{/9.III}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -2154,6 +2157,16 @@
 		$('#printicon').on('click', function (e) { window.print(); });
 		$('div.randomizer').on('click', function (e) { randomizeWorlds(); });
 		$('#toggleFull').on('click', function (e) { toggleFull(); });
+
+		//Reformat examples according to mode.
+		if (full)
+			$("div.note").each(function(){
+				$(this).removeClass("col-md-2 col-md-3 col-md-4 col-md-6 col-md-12 col-xs-3 col-xs-4 col-xs-6 col-xs-8 col-xs-12");
+				$(this).find("h2").css("display","block");
+				$(this).find("img").css("max-width","500px");
+			});
+		else
+			$("div.note").each(function(){$(this).detach().appendTo("div.notes");});
 
 	}
 	
