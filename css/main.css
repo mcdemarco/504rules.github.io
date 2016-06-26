@@ -351,11 +351,11 @@ table th {
 	}
 	
 	body { background-color:#fff; }
-	
+	/*
 	.container {
 		page-break-after: always;
 	}
-
+       */
 	.row {
 		page-break-inside: avoid;
 	}
