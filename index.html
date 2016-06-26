@@ -182,11 +182,11 @@
 			</ul>
 		</div>
 	</div>
-	{{#company}}<div class="row warning">
+	{{#company}}{{^full}}<div class="row warning">
 		<div class="col-md-12 col-xs-12">
 			<p>IMPORTANT: Because of the complexity of the game rules you only find a summary of the most important details. The complete rules are in the rules booklet!</p>
 		</div>
-	</div>{{/company}}
+	</div>{{/full}}{{/company}}
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>Game Preparation</h1></div>
 		<div class="col-md-10 col-xs-10">
@@ -392,6 +392,12 @@
 <script id="template_examples" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities which are explored during the game.</p>{{/5}}{{/4}}
+		{{#full}}{{#company}}
+			<p>
+				<b>Share Round (SR):</b> During the SR, the players deal in shares of the 5 stock companies. This round is played in a clockwise player order, beginning with the player having the starting player card.<br/>
+				<b>Business Round (BR):</b> During the BR, the presidents execute the actions of their stock companies according to the other two modules.
+			</p>
+		{{/company}}{{/full}}
 		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
 		{{#9.II}}<p>Play the game in <b>alternating</b> turns: SR, BR, SR, BR, SR, BR, etc.</p>{{/9.II}}
 	{{/capture}}
@@ -813,6 +819,13 @@
 		{{/7.I}}{{/3.I}}{{/company}}
 	{{/capture}}
 	{{#hascapture}}
+		{{#full}}{{#company}}
+		<div class="row warning">
+			<div class="col-md-12 col-xs-12">
+				<p>BUSINESS ROUND (BR):  Phases 1&ndash;4 constitute the business round.</p>
+			</div>
+		</div>
+		{{/company}}{{/full}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2"><h1>Phase 1: {{^company}}Player{{/company}}{{#company}}Company{{/company}} Order</h1></div>
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
