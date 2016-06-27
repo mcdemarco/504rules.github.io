@@ -176,9 +176,6 @@
 				{{#parts}}
 					<li><span>{{id}}</span>{{count}} {{name}}</li>
 				{{/parts}}
-				{{#full}}
-					<li>and each {{agent}} gets a certain number of {{#residents}}<span>14</span>residents {{^9.I}}and{{/9.I}}{{/residents}} <span>13</span>settlements (see table).</li>
-				{{/full}}
 			</ul>
 		</div>
 	</div>
@@ -1538,12 +1535,15 @@
 	var full = sessionStorage.getItem('full') ? (sessionStorage.getItem('full') == 'true') : false;
  
 	var parts = {
+		'1': {'name': 'map tiles', 'max': 61},
 		'2': {'name': 'goods', 'max': 48},
 		'3': {'name': 'covering tokens', 'max': 30},
 		'4': {'name': 'city cards', 'max': 10},
 		'5': {'name': 'price token', 'max': 1},
 		'6': {'name': 'starting player card', 'max': 1},
+		'7': {'name': 'playing money', 'max': 1},
 		'8': {'name': 'privileges', 'max': 66},
+		'9': {'name': 'headquarters', 'max': 5},
 		'10': {'name': 'transport trolleys', 'max': 5},
 		'11': {'name': 'cargo hold cards', 'max': 5},
 		'12': {'name': 'movement point tokens', 'max': 10},
@@ -1574,6 +1574,8 @@
 		'36': {'name': 'boat', 'max': 1},
 	}
 	
+	var full_parts = {'1': 61, '7': 1, '9': 5};
+
 	var shares_defs = {
 		"company": {agent: 'president', sagent: 'the president', owner: 'company', owners:'companies' , fowns: 'the company\'s', owns: 'its', company: true},
 		"player": {agent: 'player', sagent: 'he', owner: 'player', owners:'players',  fowns: 'his', owns: 'his', company: false}
@@ -2083,6 +2085,47 @@
 				'count': value,
 			});
 		});
+
+		//Push parts for full mode.
+		if (params['full']) {
+			$.map(full_parts, function(value, key) {
+				var partinfo = parts[key];
+				part_list.push({
+					'name': partinfo.name,
+					'id': partinfo.id==undefined?key:partinfo.id,
+					'count': value > 1 ? value : 'all',
+				});
+			});
+			if (params['company']) {
+				if (!game_parts['13s'])
+					part_list.push({
+						'name': 'settlements per company (see table)',
+						'id': '13',
+						'count': 'a number of ',
+					});
+				if (params['residents'] && !game_parts['14s'])
+					part_list.push({
+						'name': 'residents per company (see table)',
+						'id': '14',
+						'count': 'a number of ',
+					});
+			} else {
+				//Non-company case.
+				if (!game_parts['13p'])
+					part_list.push({
+						'name': 'settlements per player (see table)',
+						'id': '13',
+						'count': 'a number of ',
+					});
+				if (params['residents'] && !game_parts['14p'])
+				part_list.push({
+					'name': 'residents per player (see table)',
+					'id': '14',
+					'count': 'a number of ',
+				});
+			}
+		}
+
 		part_list.sort(function(a, b) {
 			return a['id'] - b['id'];
 		});
