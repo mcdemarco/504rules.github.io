@@ -388,16 +388,15 @@
 	{{#capture}}
 		{{#full}}
 			<p>During a round, the players execute all phases in order. (Each game uses only some of the phases.) The players execute phases 1, 2, 4 and 5 together. In phase 3, each player takes his turn (according to the player order noted above), but again executes all parts of this phase in order (purchase, residents and so on).</p>
-			{{#residents}}
-				<p>During a whole game, the player can only have a restricted number of residents at any time on a tile: on his capital, next to his headquarters he may have up to 9 residents, on all other tiles (cities and land tiles) next to his settlement he may have up to 7 residents.</p>
-			{{/residents}}
 			{{^4}}
 				<p>All tribes live peacefully with each other on all land tiles and cities. The player may {{#residents}}move his residents on all land tiles and cities and{{/residents}} place settlements on all these tiles, independent of other players‘ tribes. The player ignores the other players‘ tribes for his actions, only his {{#residents}}residents and{{/residents}} settlements are important.</p>
 			{{/4}}
-			<p>After the player places his headquarters and settlements on tiles, they stay there for the remainder of the game. The player only moves his {{#residents}}residents{{/residents}}{{^residents}}transport trolley{{/residents}} on the map.</p>
+			<p>After the player places his headquarters and settlements on tiles, they stay there for the remainder of the game. The player only moves his {{#residents}}residents {{#1}}and{{/1}}{{/residents}}{{#1}}transport trolley{{/1}} on the map.</p>
 			{{#residents}}
 				<p>The player‘s residents either stand upright (and are considered as “active“) or lay flat on the tiles (and are considered as “exhausted“).</p>
 			{{/residents}}
+			<p>The players are NOT allowed to trade goods, money or other things between each other. {{#9}}All players owning shares of the same stock company may give hints or warnings to the president of that stock company, so they may commonly control the fate of that stock company. Players without shares of that company are not allowed to do this! In the end, the president makes all finale decisions for his stock company!{{/9}}</p>
+			<p>The players may place their personal money in a single stack and do not need to give information about the real amount which they own. {{#9}}All money in the company assets is common knowledge{{#9.III}}, even for private stock companies{{/9.III}}!{{/9}}</p>
 			{{#company}}
 			<p>
 				<b>Share Round (SR):</b> During the SR, the players deal in shares of the 5 stock companies. This round is played in a clockwise player order, beginning with the player having the starting player card.<br/>
@@ -580,7 +579,8 @@
 		{{/8.III}}
 		{{#residents}}
 			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company's holdings){{/company}} and place them on the board. (subject to placement rules)</p>
-			{{#full}}	
+			{{#full}}
+				<p>The player places the newly bought residents upright on the map on tiles with his settlements and exhausted residents. On his capital, he always can place any number of residents up to a total of 9 residents. On all other tiles, he may only double the number of his already existing population (the settlement and possibly exhausted residents) up to the maximum of 7 residents: If he only has 1 settlement on a tile, he may only place 1 new resident next to that settlement. If he has 1 settlement and 2 exhausted residents on a tile, he may place up to 3 new residents on that tile. The player always ignores the population of the other players!</p>
 				<p>At the end of Phase 3 C, the {{agent}} stands all {{fowns}} exhausted residents upright, so they are active again and ready for new actions.</p>
 			{{/full}}
 		{{/residents}}
@@ -611,6 +611,10 @@
 	{{/hascapture}}
 
 	{{#capture}}{{#residents}}
+		{{#full}}
+			<p>The player can use each of his active residents for 1 action, before that resident is exhausted. Thus, for tracking purposes, all active residents stand upright; all exhausted residents lay flat after their action.</p>
+			<p>As an action, the player can move his resident 1 step to an adjacent tile before that resident exhausts. The residents can move across all land tiles and cities, but never move onto water! If the player moves that resident on a tile without 1 of his settlements for the first time, he exchanges that resident for 1 of his settlements. He places the resident back into his storage and instead places 1 settlement on that tile.</p>
+		{{/full}}
 		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the {{agent}} moves them onto tiles with at least 1 of {{fowns}} exhausted residents, they remain active.</p>{{/hurry}}
 		{{#2}}
 			{{^2.III}}
@@ -738,7 +742,7 @@
 			{{/8.III}}
 		{{/8}}
 		{{#full}}
-			<p>At the end of Phase 3 D, all the {{owner}}&rsquo;s residents lay exhausted on the land tiles and cities.</p>
+			<p>At the end of Phase 3 D, if the {{agent}} finished all desired actions and still has some unused active residents, he simply exhausts these residents on the tiles where they are standing.</p>
 		{{/full}}
 	{{/residents}}
 			{{#4.III}}
@@ -988,7 +992,7 @@
 			{{#7.I}}<p>The company gets $20 base income for the capital, plus income for the majorities as stated above, see table and example <b>Income</b>.</p>{{/7.I}}
 			{{#8.I}}
 				<p>{{^1}}The company may sell goods already produced in its plants.{{/1}}{{#1}}The company may sell goods already delivered to its trading houses.{{/1}} It may sell 1 good to each of its trading houses (up to 2 goods to the headquarters in its capital). {{^1}}Afterwards, the goods remain in front of the company card.{{/1}}{{#1}}Afterwards, the goods remain on the trading houses.{{/1}}</p>
-				<p>The company gets $20 base income for his capital and additional income for the sold goods, see the table and example <b>Scoring</b>. The company may not exchange goods during the income phase.</p>
+				<p>The company gets $20 base income for its capital and additional income for the sold goods, see the table and example <b>Scoring</b>. The company may not exchange goods during the income phase.</p>
 			{{/8.I}}
 			<p>Place the income of the stock company separate from the company assets to the side for now.</p>
 		{{/9.II}}
