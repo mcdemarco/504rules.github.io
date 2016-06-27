@@ -386,12 +386,25 @@
 </script>
 <script id="template_phase12" type="x-tmpl-mustache">
 	{{#capture}}
-		{{#full}}{{#company}}
+		{{#full}}
+			<p>During a round, the players execute all phases in order. (Each game uses only some of the phases.) The players execute phases 1, 2, 4 and 5 together. In phase 3, each player takes his turn (according to the player order noted above), but again executes all parts of this phase in order (purchase, residents and so on).</p>
+			{{#residents}}
+				<p>During a whole game, the player can only have a restricted number of residents at any time on a tile: on his capital, next to his headquarters he may have up to 9 residents, on all other tiles (cities and land tiles) next to his settlement he may have up to 7 residents.</p>
+			{{/residents}}
+			{{^4}}
+				<p>All tribes live peacefully with each other on all land tiles and cities. The player may {{#residents}}move his residents on all land tiles and cities and{{/residents}} place settlements on all these tiles, independent of other players‘ tribes. The player ignores the other players‘ tribes for his actions, only his {{#residents}}residents and{{/residents}} settlements are important.</p>
+			{{/4}}
+			<p>After the player places his headquarters and settlements on tiles, they stay there for the remainder of the game. The player only moves his {{#residents}}residents{{/residents}}{{^residents}}transport trolley{{/residents}} on the map.</p>
+			{{#residents}}
+				<p>The player‘s residents either stand upright (and are considered as “active“) or lay flat on the tiles (and are considered as “exhausted“).</p>
+			{{/residents}}
+			{{#company}}
 			<p>
 				<b>Share Round (SR):</b> During the SR, the players deal in shares of the 5 stock companies. This round is played in a clockwise player order, beginning with the player having the starting player card.<br/>
 				<b>Business Round (BR):</b> During the BR, the presidents execute the actions of their stock companies according to the other two modules.
 			</p>
-		{{/company}}{{/full}}
+			{{/company}}
+		{{/full}}
 		{{#9.I}}<p>Play the game in the following order of turns: SR, BR, BR, SR, BR, SR, BR, SR, BR, game end.</p>{{/9.I}}
 		{{#9.II}}<p>Play the game in <b>alternating</b> turns: SR, BR, SR, BR, SR, BR, etc.</p>{{/9.II}}
 	{{/capture}}
@@ -560,6 +573,18 @@
 		{{/3.III}}
 		{{#1}}
 			<p>The {{agent}} may buy exactly 1 upgrade for {{fowns}} transport trolley per turn, either a bigger cargo hold or more movement points, see table <b>Prices for Upgrades</b>.</p>
+		{{/1}}
+		{{#8.III}}
+			<p>Starting with the 2nd round the {{agent}} may buy only at max 2 more residents than the # of plants {{^company}}he{{/company}}{{#company}}the company{{/company}} owns in each turn.</p>
+			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
+		{{/8.III}}
+		{{#residents}}
+			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company's holdings){{/company}} and place them on the board. (subject to placement rules)</p>
+			{{#full}}	
+				<p>At the end of Phase 3 C, the {{agent}} stands all {{fowns}} exhausted residents upright, so they are active again and ready for new actions.</p>
+			{{/full}}
+		{{/residents}}
+		{{#1}}
 			<div class="note col-md-2 col-xs-4">
 				<h2>Prices for Upgrades</h2>
 				<table>
@@ -577,13 +602,6 @@
 				</div>
 			{{/residents}}
 		{{/1}}
-		{{#8.III}}
-			<p>Starting with the 2nd round the {{agent}} may buy only at max 2 more residents than the # of plants {{^company}}he{{/company}}{{#company}}the company{{/company}} owns in each turn.</p>
-			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
-		{{/8.III}}
-		{{#residents}}
-			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company's holdings){{/company}} and place them on the board. (subject to placement rules)</p>
-		{{/residents}}
 	{{/capture}}
 	{{#hascapture}}
 		<div class="row section">
@@ -719,6 +737,9 @@
 				{{#4}}<p>Any number of {{owners}} may build trading houses on each city (no fights on cities). The {{agent}}s must take the trading houses of the militia into account, so even the first {{owner}} must pay money to build {{owns}} trading house!</p>{{/4}}
 			{{/8.III}}
 		{{/8}}
+		{{#full}}
+			<p>At the end of Phase 3 D, all the {{owner}}&rsquo;s residents lay exhausted on the land tiles and cities.</p>
+		{{/full}}
 	{{/residents}}
 			{{#4.III}}
 				<div class="note col-md-3 col-xs-6">
@@ -837,7 +858,7 @@
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 3 F: Factories</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>Each round, the {{agent}} may buy at max 1 factory on each city, If the {{owner}} has 1 settlement there and pays the matching costs, see left for the table Factory.{{#3.I}} The {{owner}} immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the {{owners}} in common may build a total of 3 factories.
+				<p>Each round, the {{agent}} may buy at max 1 factory on each city, If the {{owner}} has 1 settlement there and pays the matching costs; see the table Factory.{{#3.I}} The {{owner}} immediately gets 5 victory points (VP) for building the factory.{{/3.I}} On a city, the {{owners}} in common may build a total of 3 factories.
 				<p>The {{owner}} marks {{owns}} factory with {{owns}} settlement. If the {{owner}} owns several factories in the same city, {{^company}}he{{/company}}{{#company}}it{{/company}} stacks them below {{owns}} settlement.</p>
 				<div class="note col-md-3 col-xs-6">
 					<h2>Factory:</h2>
