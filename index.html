@@ -43,7 +43,6 @@
 	<div id="target_head">Loading Head...</div>
 	<div id="target_setup">Loading Setup...</div>
 	<div id="target_privileges">Loading Privilege Cards...</div>
-	<div id="target_examples">Loading Examples...</div>
 </div>
 <div class="container">
 	<div id="target_phase12">Loading Phases 1 and 2...</div>
@@ -380,15 +379,13 @@
 		</div>
 	{{/full}}
 	{{/3}}
-</script>
-<script id="template_examples" type="x-tmpl-mustache">
+
 	{{^full}}
 	<div class="row notes"></div>
 	{{/full}}
 </script>
 <script id="template_phase12" type="x-tmpl-mustache">
 	{{#capture}}
-		{{#4}}{{#5}}<p>Place 1 barrack and 1 militia on all free cities which are explored during the game.</p>{{/5}}{{/4}}
 		{{#full}}{{#company}}
 			<p>
 				<b>Share Round (SR):</b> During the SR, the players deal in shares of the 5 stock companies. This round is played in a clockwise player order, beginning with the player having the starting player card.<br/>
@@ -662,6 +659,7 @@
 			<p>Afterwards, the {{agent}} rolls 1 die and places the corresponding map tile on the destination space. See the example <b>Exploring</b>.</p>
 			{{#mapnum.1}}<p>The {{agent}}s may only explore in a distance of 4 spaces around the central city. Thus, following the adjacency rules above, the {{agent}}s will not always explore all cities or water tiles.</p>{{/mapnum.1}}
 			{{#1}}{{^1.III}}{{^8}}<p>When placing a city, place 4 goods onto that city, matching the small circular symbol.</p>{{/8}}{{/1.III}}{{/1}}
+			{{#4}}<p>Place 1 barrack and 1 militia on all free cities which are explored during the game.</p>{{/4}}
 			{{#5.I}}
 				{{#2.III}}<p>
 					The {{agent}} counts that tile on the majority board.
@@ -2161,7 +2159,7 @@
 			'III': $.extend(true, {}, module_defs[world[2]]['III']),
 		};
 
-		var pageSections = ['head','setup','privileges','examples','phase12','phase3abcd','phase3efgh','scoring'];
+		var pageSections = ['head','setup','privileges','phase12','phase3abcd','phase3efgh','scoring'];
 		$.each(pageSections, function(index, value) {
 			$('#target_' + value).html(buildRules($('#template_' + value).html()));
 		});
