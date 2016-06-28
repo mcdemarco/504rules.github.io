@@ -387,13 +387,13 @@
 <script id="template_phase12" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#full}}
-			<p>During a round, the players execute all phases in order. (Each game uses only some of the phases.) The players execute phases 1, 2, 4 and 5 together. In phase 3, each player takes his turn (according to the player order noted above), but again executes all parts of this phase in order (purchase, residents and so on).</p>
+			<p>During a round, the {{agent}}s execute all relevant phases in order.  The {{agent}}s execute phases 1, 2, 4 and 5 together. In phase 3, each {{agent}} takes his turn (according to the {{owner}} order noted above), but again executes all parts of this phase in order (purchase, residents and so on).</p>
 			{{^4}}
-				<p>All tribes live peacefully with each other on all land tiles and cities. The player may {{#residents}}move his residents on all land tiles and cities and{{/residents}} place settlements on all these tiles, independent of other players‘ tribes. The player ignores the other players‘ tribes for his actions, only his {{#residents}}residents and{{/residents}} settlements are important.</p>
+				<p>All tribes live peacefully with each other on all land tiles and cities. The {{agent}} may {{#residents}}move his residents on all land tiles and cities and{{/residents}} place settlements on all these tiles, independent of other {{owners}}&rsquo; tribes. The {{agent}} ignores the other {{owners}}&rsquo; tribes for his actions; only {{fowns}} {{#residents}}residents and{{/residents}} settlements are important.</p>
 			{{/4}}
-			<p>After the player places his headquarters and settlements on tiles, they stay there for the remainder of the game. The player only moves his {{#residents}}residents {{#1}}and{{/1}}{{/residents}}{{#1}}transport trolley{{/1}} on the map.</p>
+			<p>After the {{agent}} places his headquarters and settlements on tiles, they stay there for the remainder of the game. The {{agent}} only moves his {{#residents}}residents {{#1}}and{{/1}}{{/residents}}{{#1}}transport trolley{{/1}} on the map.</p>
 			{{#residents}}
-				<p>The player‘s residents either stand upright (and are considered as “active“) or lay flat on the tiles (and are considered as “exhausted“).</p>
+				<p>The {{agent}}&rsquo;s residents either stand upright (and are considered as “active“) or lay flat on the tiles (and are considered as “exhausted“).</p>
 			{{/residents}}
 			<p>The players are NOT allowed to trade goods, money or other things between each other. {{#9}}All players owning shares of the same stock company may give hints or warnings to the president of that stock company, so they may commonly control the fate of that stock company. Players without shares of that company are not allowed to do this! In the end, the president makes all finale decisions for his stock company!{{/9}}</p>
 			<p>The players may place their personal money in a single stack and do not need to give information about the real amount which they own. {{#9}}All money in the company assets is common knowledge{{#9.III}}, even for private stock companies{{/9.III}}!{{/9}}</p>
@@ -578,9 +578,9 @@
 			<p><b>Example:</b> If the {{owner}} owns 4 plants, {{sagent}} may only buy up to 6 residents.</p>
 		{{/8.III}}
 		{{#residents}}
-			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company's holdings){{/company}} and place them on the board. (subject to placement rules)</p>
+			<p>The {{agent}} may buy residents for $10 each {{#company}}(paying from his company's holdings){{/company}} and place them on the board (subject to placement rules).</p>
 			{{#full}}
-				<p>The player places the newly bought residents upright on the map on tiles with his settlements and exhausted residents. On his capital, he always can place any number of residents up to a total of 9 residents. On all other tiles, he may only double the number of his already existing population (the settlement and possibly exhausted residents) up to the maximum of 7 residents: If he only has 1 settlement on a tile, he may only place 1 new resident next to that settlement. If he has 1 settlement and 2 exhausted residents on a tile, he may place up to 3 new residents on that tile. The player always ignores the population of the other players!</p>
+				<p>The {{agent}} places the newly bought residents upright on the map on tiles with his settlements and exhausted residents. On his capital, he always can place any number of residents up to a total of 9 residents. On all other tiles, he may only double the number of his already existing population (the settlement and possibly exhausted residents) up to the maximum of 7 residents: If he only has 1 settlement on a tile, he may only place 1 new resident next to that settlement. If he has 1 settlement and 2 exhausted residents on a tile, he may place up to 3 new residents on that tile. The {{agent}} always ignores the population of the other {{owners}}!</p>
 				<p>At the end of Phase 3 C, the {{agent}} stands all {{fowns}} exhausted residents upright, so they are active again and ready for new actions.</p>
 			{{/full}}
 		{{/residents}}
@@ -612,8 +612,8 @@
 
 	{{#capture}}{{#residents}}
 		{{#full}}
-			<p>The player can use each of his active residents for 1 action, before that resident is exhausted. Thus, for tracking purposes, all active residents stand upright; all exhausted residents lay flat after their action.</p>
-			<p>As an action, the player can move his resident 1 step to an adjacent tile before that resident exhausts. The residents can move across all land tiles and cities, but never move onto water! If the player moves that resident on a tile without 1 of his settlements for the first time, he exchanges that resident for 1 of his settlements. He places the resident back into his storage and instead places 1 settlement on that tile.</p>
+			<p>The {{agent}} can use each of his active residents for 1 action, before that resident is exhausted. Thus, for tracking purposes, all active residents stand upright; all exhausted residents lay flat after their action.</p>
+			<p>As an action, the {{agent}} can move his resident 1 step to an adjacent tile before that resident exhausts. The residents can move across all land tiles and cities, but never move onto water! If the {{agent}} moves that resident on a tile without 1 of his settlements for the first time, he exchanges that resident for 1 of his settlements. He places the resident back into his storage and instead places 1 settlement on that tile.</p>
 		{{/full}}
 		{{#hurry}}<p>While moving, the residents are <b>in a hurry</b>. Thus, if the {{agent}} moves them onto tiles with at least 1 of {{fowns}} exhausted residents, they remain active.</p>{{/hurry}}
 		{{#2}}
