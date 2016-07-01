@@ -25,7 +25,7 @@ body { background-color:#ddd; }
 
 .quickMenu .btn-sm {
 	font-size:1.5em;
-	padding:5px 5px;
+	padding:5px 3px;
 }
 
 .top p {
@@ -132,6 +132,9 @@ table th {
 .water-adjacent { background-image: url('../img/water-adjacent-icon.png'); }
 
 .heading.map1 { background-image: url('../img/map1.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map1.players2 { background-image: url('../img/map1-2p.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map1.players3 { background-image: url('../img/map1-3p.png'); background-position:80% 60%; background-repeat:no-repeat; }
+.heading.map1.players4 { background-image: url('../img/map1-4p.png'); background-position:80% 60%; background-repeat:no-repeat; }
 .heading.map2 { background-image: url('../img/map2.png'); background-position:80% 60%; background-repeat:no-repeat; }
 .heading.map3 { background-image: url('../img/map3.png'); background-position:80% 60%; background-repeat:no-repeat; }
 .heading.map4 { background-image: url('../img/map4.png'); background-position:80% 60%; background-repeat:no-repeat; }
@@ -156,7 +159,7 @@ table th {
 	font-weight: bold;
 	margin: 1em 0;
 	line-height: 1.5em;	
-	padding-right:4em;
+	padding-right:5em;
 }
 
 .name h1 span {
@@ -241,6 +244,15 @@ table th {
 	font-weight: bold;
 	margin: 0;
 	display: inline-block;
+}
+
+.note h2.invert {
+	vertical-align: top;
+	color: white;
+	background-color: #CC6D62;
+	padding:3px 8px;
+	margin:3px 0;
+	border-radius: 15px;
 }
 
 .note p {
@@ -351,11 +363,11 @@ table th {
 	}
 	
 	body { background-color:#fff; }
-	
+	/*
 	.container {
 		page-break-after: always;
 	}
-
+       */
 	.row {
 		page-break-inside: avoid;
 	}
