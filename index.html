@@ -1584,7 +1584,7 @@
 	var world;
 	var modules;
 	var players = sessionStorage.getItem('players') ? parseInt(sessionStorage.getItem('players'),10) : 1;
-	var full = sessionStorage.getItem('full') ? (sessionStorage.getItem('full') == 'true') : false;
+	var full = localStorage.getItem('full') ? (localStorage.getItem('full') == 'true') : false;
  
 	var parts = {
 		'1': {'name': 'map tiles', 'max': 61},
@@ -2210,7 +2210,7 @@
 	function toggleFull() {
 		//Set full and show the extended/full rules when full is true.
 		full = !full;
-		sessionStorage.setItem('full', full);
+		localStorage.setItem('full', full);
 		load();
 	}
 		
