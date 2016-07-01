@@ -161,19 +161,19 @@
 			<div style="float:right;padding-left:1em;">
 				<table>
 					<tr>
-						<th></th>{{^company}}<th>2♟</th><th>3♟</th><th>4♟</th>{{/company}}{{#company}}<th>5 stock companies</th>{{/company}}
+						<th></th>{{^company}}{{#players.2}}<th>2♟</th>{{/players.2}}{{#players.3}}<th>3♟</th>{{/players.3}}{{#players.4}}<th>4♟</th>{{/players.4}}{{/company}}{{#company}}<th>5 stock companies</th>{{/company}}
 					</tr>
 					{{#residents}}
 						<tr>
-							<th>residents</th>{{^company}}<td>30</td><td>25</td><td>20</td>{{/company}}{{#company}}<td>15</th>{{/company}}
+							<th>residents</th>{{^company}}{{#players.2}}<td>30</td>{{/players.2}}{{#players.3}}<td>25</td>{{/players.3}}{{#players.4}}<td>20</td>{{/players.4}}{{/company}}{{#company}}<td>15</th>{{/company}}
 						</tr>
 						<tr>
-							<th>settlements</th>{{^company}}<td>30</td><td>25</td><td>20</td>{{/company}}{{#company}}<td>15</th>{{/company}}
+							<th>settlements</th>{{^company}}{{#players.2}}<td>30</td>{{/players.2}}{{#players.3}}<td>25</td>{{/players.3}}{{#players.4}}<td>20</td>{{/players.4}}{{/company}}{{#company}}<td>15</th>{{/company}}
 						</tr>
 					{{/residents}}
 					{{^residents}}
 						<tr>
-							<th>settlements</th>{{^company}}<td>20</td><td>20</td><td>20</td>{{/company}}{{#company}}<td>15</th>{{/company}}						
+							<th>settlements</th>{{^company}}{{#players.2}}<td>20</td>{{/players.2}}{{#players.3}}<td>20</td>{{/players.3}}{{#players.4}}<td>20</td>{{/players.4}}{{/company}}{{#company}}<td>15</th>{{/company}}						
 						</tr>
 					{{/residents}}
 				</table>
@@ -281,16 +281,15 @@
 			{{#company}}
 				<p>Lay out the {{#9.II}}{{#7.I}}scoring{{/7.I}}{{^7.I}}company order{{/7.I}}{{/9.II}}{{^9.II}}player order{{/9.II}} cards for 5 companies for the business rounds (BR) and place 1 resident of each company next to these cards. 1 player gets the starting player card for the 1st share round (SR).</p>
 			{{/company}}
-			<p>
-				{{#order.clockwise}}Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}{{/order.clockwise}}
+				{{#order.clockwise}}<p>Players choose a start player, turns will proceed clockwise. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}Players all place their capitals in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}In reverse turn order players choose their capitals.{{/mapnum.5}}{{/mapnum.4}}</p>{{/order.clockwise}}
 				{{^order.clockwise}}
-					{{#order.shares}}Players choose a start player for the first SR. Capitals are placed when companies are established.{{/order.shares}}
+					{{#order.shares}}<p>Players choose a start player for the first SR. Capitals are placed when companies are established.</p>{{/order.shares}}
 					{{^order.shares}}
-						Round based {{owner}} order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}
-						{{#order.income}}Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.{{/order.income}}
+						<p>Round based {{owner}} order as shown in Phase 1. {{^9.II}}Capitals are placed in Phase 1 of the first round.{{/9.II}}{{#9.II}}Capitals are placed when companies are established.{{/9.II}}</p>
+						{{#order.income}}<p>Depending on the # of players place the matching player order cards and 1 resident of each player next to the map.</p>{{/order.income}}
 						{{#order.vp}}
 							{{^9.II}}
-								<p>2♟, 3♟, 4♟: Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
+								<p>{{#players.all}}2♟, 3♟, 4♟: {{/players.all}}Depending on the # of players, take the corresponding starting and scoring cards. Place the 2 starting cards next to the map. Then shuffle the corresponding scoring cards separated by their backs of I, II, III and place them in 3 face down rows next to the starting cards.</p>
 							{{/9.II}}
 							{{#9.II}}
 								<p>Possibly, not all 5 stock companies are always active. Thus, the players take the following cards for each business round (BR):</p>
@@ -303,7 +302,6 @@
 						{{/order.vp}}
 					{{/order.shares}}
 				{{/order.clockwise}}
-			</p>
 			{{#1}}{{^1.III}}
 				<p>When placing capitals, {{agent}}s must choose cities that offer different types of goods.</p>
 			{{/1.III}}{{/1}}
