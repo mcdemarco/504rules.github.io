@@ -1,4 +1,5 @@
-<html manifest="manifest.appcache">
+<!DOCTYPE html>
+<html><!-- manifest="manifest.appcache"-->
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="initial-scale=1,user-scalable=yes">
@@ -46,8 +47,9 @@
 </div>
 <div class="container">
 	<div id="target_phase12">Loading Phases 1 and 2...</div>
-	<div id="target_phase3abcd">Loading Phase 3A-D...</div>
-	<div id="target_phase3efgh">Loading Phase 3E-H...</div>
+	<div id="target_phase3abc">Loading Phase 3A-C...</div>
+	<div id="target_phase3de">Loading Phase 3D_E...</div>
+	<div id="target_phase3fgh">Loading Phase 3F-H...</div>
 	<div id="target_scoring">Loading Scoring...</div>
 </div>
 
@@ -553,7 +555,7 @@
 		</div>
 	{{/3.III}}{{/3}}
 </script>
-<script id="template_phase3abcd" type="x-tmpl-mustache">
+<script id="template_phase3abc" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2}}{{#residents}}
 			<p>At the start of his turn, the {{agent}} may change {{fowns}} capital by exchanging {{owns}} headquarters with 1 of {{fowns}} own settlements in any other city.</p>
@@ -623,6 +625,9 @@
 		</div>
 	{{/hascapture}}
 
+</script>
+<script id="template_phase3de" type="x-tmpl-mustache">
+		
 	{{#capture}}{{#residents}}
 		{{#full}}
 			<p>The {{agent}} can use each of his active residents for 1 action, before that resident is exhausted. Thus, for tracking purposes, all active residents stand upright; all exhausted residents lay flat after their action.</p>
@@ -815,8 +820,7 @@
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
-</script>
-<script id="template_phase3efgh" type="x-tmpl-mustache">
+
 	{{#capture}}
 		{{#1}}
 			{{^1.III}}<p>The {{agent}} may transport 1 good of any type or up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of {{fowns}} trading houses){{/8.III}}{{/8}}, the goods remain there until any {{owner}} loads them again onto {{own}} transport trolley.</p>{{/1.III}}
@@ -876,7 +880,8 @@
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
-
+</script>
+<script id="template_phase3fgh" type="x-tmpl-mustache">
 	{{#3}}{{^3.III}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 3 F: Factories</h1></div>
@@ -2242,7 +2247,7 @@
 			'III': $.extend(true, {}, module_defs[world[2]]['III']),
 		};
 
-		var pageSections = ['head','setup','privileges','phase12','phase3abcd','phase3efgh','scoring'];
+		var pageSections = ['head','setup','privileges','phase12','phase3abc','phase3de','phase3fgh','scoring'];
 		$.each(pageSections, function(index, value) {
 			$('#target_' + value).html(buildRules($('#template_' + value).html()));
 		});
