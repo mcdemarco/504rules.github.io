@@ -1,4 +1,5 @@
-<html manifest="manifest.appcache">
+<!DOCTYPE html>
+<html><!-- manifest="manifest.appcache"-->
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="initial-scale=1,user-scalable=yes">
@@ -46,8 +47,9 @@
 </div>
 <div class="container">
 	<div id="target_phase12">Loading Phases 1 and 2...</div>
-	<div id="target_phase3abcd">Loading Phase 3A-D...</div>
-	<div id="target_phase3efgh">Loading Phase 3E-H...</div>
+	<div id="target_phase3abc">Loading Phase 3A-C...</div>
+	<div id="target_phase3de">Loading Phase 3D_E...</div>
+	<div id="target_phase3fgh">Loading Phase 3F-H...</div>
 	<div id="target_scoring">Loading Scoring...</div>
 </div>
 
@@ -546,14 +548,14 @@
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 2: Privileges</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are a # of privileges in the row of cards depending on the # of players: {{#players.2}}4 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}5 (3♟){{/players.3}}{{#players.all}}, {{/players.all}}{{#players.4}}6 (4♟){{/players.4}} or 7 privileges (5 stock companies). The starting bid for the new privileges is $20.</p>
+				<p>If there are still unsold privileges from the former round, place the price token to the right of these privileges. The starting bid for these privileges drops to $0. Draw new privileges and place them to the right of the price token, until you either draw 1 new privilege per {{owner}} or there are {{^company}}a # of privileges in the row of cards depending on the # of players: {{#players.2}}4 (2♟){{/players.2}}{{#players.all}}, {{/players.all}}{{#players.3}}5 (3♟){{/players.3}}{{#players.all}}, {{/players.all}}{{#players.4}}6 (4♟){{/players.4}}{{/company}}{{#company}}7 privileges in the row of cards (5 stock companies){{/company}}. The starting bid for the new privileges is $20.</p>
 				<p>All privileges are now auctioned from left to right, one at a time. {{^company}}Beginning with the 1st player, all players bid (or pass) in clockwise seating order around the table, until there is a highest bid.{{/company}}{{#company}}Beginning with the president of the 1st company, all players bid (or pass) for each of their companies in company turn order, until there is a highest bid.{{/company}} If a {{owner}} passes he may only bid again for the next privilege. The highest bidder pays the amount{{#company}} from the winning company{{/company}} to the bank and places the privilege face up in {{^company}}front of him{{/company}}{{#company}}the company&rsquo;s holdings{{/company}}. If the starting bid of the privilege was $20, and all {{owners}} pass, the privilege simply remains in the row of cards. If the starting bid of the privilege was $0 and all {{owners}} pass again, remove that privilege from the game!</p>
 				<p>The {{owner}} may only buy each type of privilege once, {{sagent}} may use {{fowns}} privileges immediately after purchase.</p>
 			</div>
 		</div>
 	{{/3.III}}{{/3}}
 </script>
-<script id="template_phase3abcd" type="x-tmpl-mustache">
+<script id="template_phase3abc" type="x-tmpl-mustache">
 	{{#capture}}
 		{{#2}}{{#residents}}
 			<p>At the start of his turn, the {{agent}} may change {{fowns}} capital by exchanging {{owns}} headquarters with 1 of {{fowns}} own settlements in any other city.</p>
@@ -623,6 +625,9 @@
 		</div>
 	{{/hascapture}}
 
+</script>
+<script id="template_phase3de" type="x-tmpl-mustache">
+		
 	{{#capture}}{{#residents}}
 		{{#full}}
 			<p>The {{agent}} can use each of his active residents for 1 action, before that resident is exhausted. Thus, for tracking purposes, all active residents stand upright; all exhausted residents lay flat after their action.</p>
@@ -815,8 +820,7 @@
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
-</script>
-<script id="template_phase3efgh" type="x-tmpl-mustache">
+
 	{{#capture}}
 		{{#1}}
 			{{^1.III}}<p>The {{agent}} may transport 1 good of any type or up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of {{fowns}} trading houses){{/8.III}}{{/8}}, the goods remain there until any {{owner}} loads them again onto {{own}} transport trolley.</p>{{/1.III}}
@@ -876,7 +880,8 @@
 			<div class="col-md-10 col-xs-10">{{{captured}}}</div>
 		</div>
 	{{/hascapture}}
-
+</script>
+<script id="template_phase3fgh" type="x-tmpl-mustache">
 	{{#3}}{{^3.III}}
 		<div class="row section">
 			<div class="col-md-2 col-xs-2 mod3"><h1>Phase 3 F: Factories</h1></div>
@@ -912,7 +917,7 @@
 					<ol>
 						<li>The attacker rolls 1 die for each attacking army. For each hit he removes 1 defending army (excess hits are forfeited).</li>
 						<li>Only if the defender suffers losses, he rolls 1 die for each of his removed armies. For each hit he removes 1 attacking army (excess hits are forfeited).</li>
-						<li>If all defending armies are removed and at least 1 attacking army survives, the attacker conquers the tile and exchanges 1 resident into 1 settlement. If at least 1 defending army survives, the attacker retreats all surviving armies into any adjacent areas under his control (in which are actual no fights).</li>
+						<li>If all defending armies are removed and at least 1 attacking army survives, the attacker conquers the tile and exchanges 1 resident into 1 settlement.<br/> If at least 1 defending army survives, all surviving attacking armies retreat into any adjacent areas under the attacker's control (in which he has no actual fights).</li>
 					</ol>
 				</div>
 				<div class="note col-md-4 col-xs-6">
@@ -2242,7 +2247,7 @@
 			'III': $.extend(true, {}, module_defs[world[2]]['III']),
 		};
 
-		var pageSections = ['head','setup','privileges','phase12','phase3abcd','phase3efgh','scoring'];
+		var pageSections = ['head','setup','privileges','phase12','phase3abc','phase3de','phase3fgh','scoring'];
 		$.each(pageSections, function(index, value) {
 			$('#target_' + value).html(buildRules($('#template_' + value).html()));
 		});
