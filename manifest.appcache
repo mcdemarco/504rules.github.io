@@ -4,15 +4,12 @@ CACHE MANIFEST
 # whenever you make any changes be sure to also update the comment below by changing the date and
 # incrementing the version number
 
-# 2016-07-02:v2.0
+# 2017-01-04:v2.1
 
 CACHE:
-index.html
 css/bootstrap-theme.css
-css/bootstrap-theme.css.map
 css/bootstrap-theme.min.css
 css/bootstrap.css
-css/bootstrap.css.map
 css/bootstrap.min.css
 css/main.css
 fonts/glyphicons-halflings-regular.eot
@@ -20,7 +17,6 @@ fonts/glyphicons-halflings-regular.svg
 fonts/glyphicons-halflings-regular.ttf
 fonts/glyphicons-halflings-regular.woff
 fonts/glyphicons-halflings-regular.woff2
-img/apple-touch-icon-180x180.png
 img/city-icon.png
 img/desert-icon.png
 img/example-2-i.png
@@ -81,7 +77,6 @@ img/modules/icon-mod6.png
 img/modules/icon-mod7.png
 img/modules/icon-mod8.png
 img/modules/icon-mod9.png
-js/bootstrap.js
 js/bootstrap.min.js
 js/jquery-1.11.3.min.js
 js/mustache.min.js

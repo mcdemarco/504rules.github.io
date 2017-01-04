@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html><!-- manifest="manifest.appcache"-->
+<html manifest="manifest.appcache">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="initial-scale=1,user-scalable=yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="504 Rules">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<title>504</title>
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/mustache.min.js"></script>
@@ -825,7 +828,7 @@
 		{{#1}}
 			{{^1.III}}<p>The {{agent}} may transport 1 good of any type or up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times. If he unloads goods on a land tile or a city, which has no demand for these goods{{#8}}{{^8.III}} (or without one of {{fowns}} trading houses){{/8.III}}{{/8}}, the goods remain there until any {{owner}} loads them again onto {{own}} transport trolley.</p>{{/1.III}}
 			{{#1.III}}<p>The {{agent}} may transport {{#8}}{{^8.III}}1 good of any type or {{/8.III}}{{/8}}up to 2 of {{fowns}} exhausted residents per cargo hold. He may load and unload the transport trolley any number of times.{{#8}}{{^8.III}}If he unloads goods on a land tile or a city, without one of {{fowns}} trading houses, the goods remain there until any {{owner}} loads them again onto {{owns}} transport trolley.{{/8.III}}{{/8}}</p>{{/1.III}}
-			<p>The {{agent}} needs 1 MP to move {{fowns}} transport trolley from tile to tile; but he needs 2 MP for the movement from any tile up on each mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the {{owner}}, which are empty or have opposing settlements and residents.{{/4}} If the {{agent}} unloads residents on a tile without 1 of {{fowns}} settlements, 1 resident turns into 1 settlement.{{/residents}}</p>
+			<p>The {{agent}} needs 1 MP to move {{fowns}} transport trolley from tile to tile; but he needs 2 MP to move from any tile onto a mountain.{{#residents}}{{^4}} The transport trolley with loaded residents may move through tiles without settlements of the {{owner}}, which are empty or have opposing settlements and residents.{{/4}} If the {{agent}} unloads residents on a tile without 1 of {{fowns}} settlements, 1 resident turns into 1 settlement.{{/residents}}</p>
 			{{#6}}
 				<p>The {{agent}} needs 0.5 MP per road when moving {{fowns}} transport trolley on {{owns}} roads.</p>
 				{{#1.III}}<p>Once per turn and following the building rules for roads, the {{agent}} may build 1 road for free from the tile with his transport trolley, if the {{owner}}} has 1 settlement each on both affected tiles.</p>{{/1.III}}
