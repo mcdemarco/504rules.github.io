@@ -1524,7 +1524,7 @@
 		return {'value': 4};
 	}
 
-	function randomizeWorlds () {
+	function randomizeWorlds() {
 		var states = { 'stateon': [], 'stateoff': [], 'statelock':[] };
 		var modules = [];
 		var premodules = [];
@@ -1591,8 +1591,9 @@
 	
 	var world;
 	var modules;
-	var players = sessionStorage.getItem('players') ? parseInt(sessionStorage.getItem('players'),10) : 1;
-	var full = localStorage.getItem('full') ? (localStorage.getItem('full') == 'true') : false;
+	var storage = storageAvailable('localStorage');
+	var players = storage && localStorage.getItem('players') ? parseInt(localStorage.getItem('players'),10) : 1;
+	var full = storage && localStorage.getItem('full') ? (localStorage.getItem('full') == 'true') : false;
  
 	var parts = {
 		'1': {'name': 'map tiles', 'max': 61},
@@ -2049,8 +2050,12 @@
 	}
 
 	function update_world(worldno) {
-		if(validate_world(worldno) != null)
-			window.location.hash = "#" + worldno
+		if (validate_world(worldno) != null) {
+			if (storage) {
+				localStorage.setItem('world',worldno);
+			}
+			window.location.hash = "#" + worldno;
+		}
 	}
 
 	function shuffle(arr, num) {
@@ -2127,7 +2132,7 @@
 		params[world.join('')] = true;
 
 		//Players map.
-		params['players']['value'] = players;									 
+		params['players']['value'] = players;
 		$.map([2,3,4], function(p) {
 			if (p == params.players.value || params.players.value == 1)
 				params['players'][p] = true;
@@ -2218,15 +2223,19 @@
 	function toggleFull() {
 		//Set full and show the extended/full rules when full is true.
 		full = !full;
-		localStorage.setItem('full', full);
-		load();
+		if (storage) {
+			localStorage.setItem('full', full);
+		}
+		loadWorld();
 	}
 		
 	function togglePlayers() {
 		//A count of 1 represents all player data.
 		players = players % 4 + 1;
-		sessionStorage.setItem('players', players);
-		load();
+		if (storage) {
+			localStorage.setItem('players', players);
+		}
+		loadWorld();
 	}
 	
 	function toggleMenu() {
@@ -2235,15 +2244,29 @@
 				$("body").css({ "padding-top": $("nav").outerHeight()+"px" });
 			});
 		} else {
-			$("#menu").slideUp(100);		
+			$("#menu").slideUp(100);
 			$("body").css({ "padding-top": "0px" });
 		}
 	}
 	
 	function load() {
-		
-		world = validate_world(window.location.hash.substr(1)) || ['1', '2', '3'];
-		
+		if (validate_world(window.location.hash.substr(1))) {
+			world = validate_world(window.location.hash.substr(1));
+		} else if (storage && localStorage.getItem('world')) {
+			world = validate_world(localStorage.getItem('world'));
+		} else {
+			world = ['1', '2', '3'];
+		}
+
+		if (storage) {
+			localStorage.setItem('world',world.join(''));
+		}
+
+		loadWorld();
+	}
+
+	function loadWorld() {
+
 		modules = {
 			'I': $.extend(true, {}, module_defs[world[0]]['I']),
 			'II': $.extend(true, {}, module_defs[world[1]]['II']),
@@ -2259,8 +2282,8 @@
 			$("#worldno-entry, #worldno").toggle();
 
 			var entry = $("#worldno-entry");
-			if(entry.is(":visible")) {
-				entry.val(window.location.hash.substr(1))
+			if (entry.is(":visible")) {
+				entry.val(world ? world.join('') : window.location.hash.substr(1))
 					.focus()
 					.select();
 			} else {
@@ -2295,6 +2318,19 @@
 			$('div.note').each(function(){$(this).detach().appendTo('div.notes');});
 
 	}
+
+	function storageAvailable(type) {
+		try {
+			var storage = window[type],
+				x = '__storage_test__';
+			storage.setItem(x, x);
+			storage.removeItem(x);
+			return true;
+		} catch(e) {
+			return false;
+		}
+	}
+
 	
 	$(function() { 
 		$('#selectall').on('click', function (e) { setModuleSelect('stateon'); });
