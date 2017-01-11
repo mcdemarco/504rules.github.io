@@ -259,6 +259,12 @@ table th {
 	border-radius: 15px;
 }
 
+.note.callout {
+    padding: 4px 6px;
+    background-color: #f9f9ed;
+    border: 1px dotted #dcdccf;
+}
+
 .note p {
 	margin: 0;
 	border-bottom:none;
